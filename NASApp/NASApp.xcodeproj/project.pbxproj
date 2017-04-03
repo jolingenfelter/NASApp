@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E76C00B1E919CCE0089D2C7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76C00A1E919CCE0089D2C7 /* APIClient.swift */; };
+		9E76C00D1E91A7B40089D2C7 /* NASAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76C00C1E91A7B40089D2C7 /* NASAClient.swift */; };
 		9EB65C981E905D3A003E74B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C971E905D3A003E74B6 /* AppDelegate.swift */; };
 		9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C991E905D3A003E74B6 /* HomeViewController.swift */; };
 		9EB65C9F1E905D3A003E74B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB65C9E1E905D3A003E74B6 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		9E76C00A1E919CCE0089D2C7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		9E76C00C1E91A7B40089D2C7 /* NASAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NASAClient.swift; sourceTree = "<group>"; };
 		9EB65C941E905D3A003E74B6 /* NASApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB65C971E905D3A003E74B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB65C991E905D3A003E74B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				9E76C00A1E919CCE0089D2C7 /* APIClient.swift */,
+				9E76C00C1E91A7B40089D2C7 /* NASAClient.swift */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */,
+				9E76C00D1E91A7B40089D2C7 /* NASAClient.swift in Sources */,
 				9EB65C981E905D3A003E74B6 /* AppDelegate.swift in Sources */,
 				9E76C00B1E919CCE0089D2C7 /* APIClient.swift in Sources */,
 			);

@@ -33,8 +33,7 @@ protocol jsonDecodable {
 
 protocol Endpoint {
     var baseURL: URL { get }
-    var path: String { get }
-    var request: URLRequest { get }
+    func urlRequest(withParameters parameters: [String: Any]?) -> URLRequest?
 }
 
 protocol APIClient {
@@ -149,23 +148,3 @@ extension APIClient {
     
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
