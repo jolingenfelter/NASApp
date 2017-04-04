@@ -64,6 +64,8 @@ final class NASAClient: APIClient {
         return URLSession(configuration: self.configuration)
     }()
     
+    let geocoder = Geocoder()
+    
     init(configuration: URLSessionConfiguration) {
         self.configuration = configuration
     }
@@ -73,10 +75,30 @@ final class NASAClient: APIClient {
     }
     
     // Fetch Earth Image for Address
-    func fetchEarthImage(for address: String, completion: @escaping(APIResult<EarthImage>) -> Void) {
+    func fetchEarthImage(forAddress address: String, completion: @escaping(APIResult<EarthImage>) -> Void) {
         
-        
-        
+        geocoder.address(fromString: address) { (location, error) in
+            
+            
+            guard let location = location else {
+                return
+            }
+            
+            guard let url = NASAImages.earth.createURL(withParameters: ["latitude" : location.coordinate.latitude, "longitude" : location.coordinate.longitude]) else {
+                return
+            }
+            
+            let request = URLRequest(url: url)
+            
+            self.fetch(request, parse: { (json) -> EarthImage? in
+                
+                let imageDictionary = json
+                
+                return EarthImage(json: imageDictionary)
+                
+            }, completion: completion)
+            
+        }
     }
     
     // Fetch Rover Images
