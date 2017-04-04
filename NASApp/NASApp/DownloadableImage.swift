@@ -45,6 +45,7 @@ extension DownloadableImage {
                 } else {
                     
                     print("Unable to download image")
+                    
                 }
                 
             }

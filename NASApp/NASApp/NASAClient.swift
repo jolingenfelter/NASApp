@@ -35,6 +35,7 @@ enum NASAImages: Endpoint {
         case .rover:
             
             url = URL(string: baseURLString + "mars-photos/api/v1/rovers/curiosity/photos?&sol=1000&api_key=\(apiKey)")
+            
         case .earth:
             
             guard let params = parameters, let latitude = params["latitude"] as? Double, let longitude = params["longitude"] as? Double else {
