@@ -84,6 +84,31 @@ final class NASAClient: APIClient {
         
     }
     
+    // Fetch Rover Images
+    func fetchRoverImages(completion: @escaping(APIResult<[RoverImage]>) -> Void) {
+        
+        guard let request = NASAImages.rover.urlRequest(withParameters: nil) else {
+            return
+        }
+        
+       fetch(request, parse: { (json) -> [RoverImage]? in
+        
+        if let roverImages = json["photos"] as? [[String : AnyObject]] {
+            
+            return roverImages.flatMap({ (imageDictionary) in
+                return RoverImage(json: json)
+            })
+            
+        } else {
+           
+            return nil
+            
+        }
+        
+       }, completion: completion)
+        
+    }
+    
 }
 
 
