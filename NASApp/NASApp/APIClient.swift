@@ -32,8 +32,8 @@ protocol jsonDecodable {
 }
 
 protocol Endpoint {
-    var baseURL: URL { get }
-    func urlRequest(withParameters parameters: [String: Any]?) -> URLRequest?
+    var baseURLString: String { get }
+    func createURL(withParameters parameters: [String: Any]?) -> URL?
 }
 
 protocol APIClient {

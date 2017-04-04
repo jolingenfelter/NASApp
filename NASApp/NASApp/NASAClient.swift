@@ -20,13 +20,13 @@ enum NASAImages: Endpoint {
         
     }
     
-    var baseURL: URL {
+    var baseURLString: String {
         
-        return URL(string:"https://api.nasa.gov/")!
+        return "https://api.nasa.gov/"
         
     }
     
-    func urlRequest(withParameters parameters: [String : Any]?) -> URLRequest? {
+    func createURL(withParameters parameters: [String : Any]?) -> URL? {
         
         var url: URL?
         
@@ -34,8 +34,7 @@ enum NASAImages: Endpoint {
         
         case .rover:
             
-            url = URL(fileURLWithPath: "mars-photos/api/v1/rovers/curiosity/photos?&sol=1000&api_key=\(apiKey)", relativeTo: baseURL)
-            
+            url = URL(string: baseURLString + "mars-photos/api/v1/rovers/curiosity/photos?&sol=1000&api_key=\(apiKey)")
         case .earth:
             
             guard let params = parameters, let latitude = params["latitude"] as? Double, let longitude = params["longitude"] as? Double else {
@@ -43,20 +42,15 @@ enum NASAImages: Endpoint {
                 return nil
             }
             
-            url = URL(fileURLWithPath: "planetary/earth/imagery?lat=\(latitude)&lon=\(longitude)&api_key=\(apiKey)", relativeTo: baseURL)
+            url = URL(string: baseURLString + "planetary/earth/imagery?lat=\(latitude)&lon=\(longitude)&api_key=\(apiKey)")
         
         }
         
-        
-        if let url = url {
-            
-            return URLRequest(url: url)
-            
-        } else {
-            
+        guard let finalURL = url else {
             return nil
-            
         }
+        
+        return finalURL
     }
     
     
@@ -87,9 +81,11 @@ final class NASAClient: APIClient {
     // Fetch Rover Images
     func fetchRoverImages(completion: @escaping(APIResult<[RoverImage]>) -> Void) {
         
-        guard let request = NASAImages.rover.urlRequest(withParameters: nil) else {
+        guard let url = NASAImages.rover.createURL(withParameters: nil) else {
             return
         }
+        
+        let request = URLRequest(url: url)
         
        fetch(request, parse: { (json) -> [RoverImage]? in
         
@@ -110,35 +106,3 @@ final class NASAClient: APIClient {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
