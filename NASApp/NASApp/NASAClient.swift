@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Contacts
 
 enum NASAImages: Endpoint {
     
@@ -74,6 +75,13 @@ final class NASAClient: APIClient {
     
     convenience init() {
         self.init(configuration: .default)
+    }
+    
+    // Fetch Earth Image for Address
+    func fetchEarthImage(for address: String, completion: @escaping(APIResult<EarthImage>) -> Void) {
+        
+        
+        
     }
     
 }

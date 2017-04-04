@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct EarthImage {
+struct EarthImage: DownloadableImage {
     
     var imageURL: URL?
     

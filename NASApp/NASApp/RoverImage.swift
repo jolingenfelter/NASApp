@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RoverImage {
+struct RoverImage: DownloadableImage {
     
     var imageURL: URL?
     
