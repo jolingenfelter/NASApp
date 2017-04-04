@@ -79,7 +79,6 @@ final class NASAClient: APIClient {
         
         geocoder.address(fromString: address) { (location, error) in
             
-            
             guard let location = location else {
                 return
             }
