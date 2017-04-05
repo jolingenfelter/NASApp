@@ -17,6 +17,54 @@ class HomeViewController: UIViewController {
         
         return imageView
     }()
+    
+    let roverPostCardButton: UIButton = {
+        
+        let button = UIButton()
+        button.setTitle("Rover Postcard Maker", for: .normal)
+        button.setImage(UIImage(named: "25"), for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 5
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = button.titleLabel?.font.withSize(35)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        return button
+    }()
+    
+    let eyeInTheSkyeButton: UIButton = {
+        
+        let button = UIButton()
+        button.setTitle("Eye-In-The-Sky", for: .normal)
+        button.setImage(UIImage(named: "30"), for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 5
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = button.titleLabel?.font.withSize(35)
+        button.imageEdgeInsets = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 80)
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        return button
+    }()
+    
+    let thirdButton: UIButton = {
+        
+        let button = UIButton()
+        button.setTitle("TBD", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 5
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = button.titleLabel?.font.withSize(35)
+        
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +88,12 @@ class HomeViewController: UIViewController {
         
         if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
             
-            let toImage = UIImage(named: "ipad_background_hori_x2")
+            let toImage = UIImage(named: "ipad_background_port_x2")
             transitionImageView(toImage: toImage!)
             
         } else {
     
-            let toImage = UIImage(named: "ipad_background_port_x2")
+            let toImage = UIImage(named: "ipad_background_hori_x2")
             transitionImageView(toImage: toImage!)
             
         }
@@ -64,6 +112,24 @@ class HomeViewController: UIViewController {
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
         
+        // StackView Setup
+        let stackView = UIStackView(arrangedSubviews: [roverPostCardButton, eyeInTheSkyeButton, thirdButton])
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 8
+        
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10
+            )])
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,7 +137,7 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Transition
+    // MARK: - Transition ImageView
     
     func transitionImageView(toImage: UIImage) {
         
