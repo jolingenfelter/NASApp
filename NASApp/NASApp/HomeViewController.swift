@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         button.layer.masksToBounds = true
         button.titleLabel?.font = button.titleLabel?.font.withSize(35)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
-        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.contentMode = .center
         
         return button
     }()
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
         button.layer.masksToBounds = true
         button.titleLabel?.font = button.titleLabel?.font.withSize(35)
         button.imageEdgeInsets = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 80)
-        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.contentMode = .center
         
         return button
     }()
