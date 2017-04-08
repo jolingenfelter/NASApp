@@ -11,6 +11,8 @@
 		9E3947B51E931D06009AABDA /* RoverImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3947B41E931D06009AABDA /* RoverImage.swift */; };
 		9E76C00B1E919CCE0089D2C7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76C00A1E919CCE0089D2C7 /* APIClient.swift */; };
 		9E76C00D1E91A7B40089D2C7 /* NASAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76C00C1E91A7B40089D2C7 /* NASAClient.swift */; };
+		9E8CD9E61E966E7200A9B54F /* RoverImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8CD9E51E966E7200A9B54F /* RoverImagesViewController.swift */; };
+		9E8CD9E91E966FB000A9B54F /* RoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8CD9E81E966FB000A9B54F /* RoverCell.swift */; };
 		9E9680671E93E65A003D112C /* DownloadableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9680661E93E65A003D112C /* DownloadableImage.swift */; };
 		9E9680691E94492E003D112C /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9680681E94492E003D112C /* Geocoder.swift */; };
 		9EB65C981E905D3A003E74B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C971E905D3A003E74B6 /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 		9E3947B41E931D06009AABDA /* RoverImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverImage.swift; sourceTree = "<group>"; };
 		9E76C00A1E919CCE0089D2C7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		9E76C00C1E91A7B40089D2C7 /* NASAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NASAClient.swift; sourceTree = "<group>"; };
+		9E8CD9E51E966E7200A9B54F /* RoverImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverImagesViewController.swift; sourceTree = "<group>"; };
+		9E8CD9E81E966FB000A9B54F /* RoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverCell.swift; sourceTree = "<group>"; };
 		9E9680661E93E65A003D112C /* DownloadableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadableImage.swift; sourceTree = "<group>"; };
 		9E9680681E94492E003D112C /* Geocoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		9EB65C941E905D3A003E74B6 /* NASApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,8 +72,17 @@
 			isa = PBXGroup;
 			children = (
 				9EB65C991E905D3A003E74B6 /* HomeViewController.swift */,
+				9E8CD9E51E966E7200A9B54F /* RoverImagesViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9E8CD9E71E966F8700A9B54F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E8CD9E81E966FB000A9B54F /* RoverCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		9E9680651E93E637003D112C /* Helpers */ = {
@@ -83,6 +96,7 @@
 		9EB65C8B1E905D3A003E74B6 = {
 			isa = PBXGroup;
 			children = (
+				9E8CD9E71E966F8700A9B54F /* Views */,
 				9EB65C961E905D3A003E74B6 /* NASApp */,
 				9EB65C951E905D3A003E74B6 /* Products */,
 			);
@@ -189,6 +203,8 @@
 				9E3947B31E93168B009AABDA /* EarthImage.swift in Sources */,
 				9E76C00D1E91A7B40089D2C7 /* NASAClient.swift in Sources */,
 				9EB65C981E905D3A003E74B6 /* AppDelegate.swift in Sources */,
+				9E8CD9E91E966FB000A9B54F /* RoverCell.swift in Sources */,
+				9E8CD9E61E966E7200A9B54F /* RoverImagesViewController.swift in Sources */,
 				9E3947B51E931D06009AABDA /* RoverImage.swift in Sources */,
 				9E76C00B1E919CCE0089D2C7 /* APIClient.swift in Sources */,
 			);
