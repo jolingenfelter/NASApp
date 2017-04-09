@@ -30,7 +30,7 @@ class RoverImagesViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.backgroundColor = AppDelegate.NASABackgroundColor
-        self.title = "Select an Image"
+        self.title = "Mars Rover Images"
         let backButton = UIBarButtonItem(title: "Home", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
@@ -116,5 +116,22 @@ extension RoverImagesViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension RoverImagesViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let roverImages = roverImages else {
+            return
+        }
+        
+        let selectedImage = roverImages[indexPath.row]
+        
+        guard let imageURL = selectedImage.imageURL else {
+            return
+        }
+        
+        let imageViewer = ImageViewer(imageURL: imageURL)
+        self.navigationController?.pushViewController(imageViewer, animated: true)
+        
+    }
     
 }

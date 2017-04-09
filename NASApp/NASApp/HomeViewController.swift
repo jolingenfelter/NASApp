@@ -18,10 +18,10 @@ class HomeViewController: UIViewController {
         return imageView
     }()
     
-    let roverPostCardButton: UIButton = {
+    let roverImagesButton: UIButton = {
         
         let button = UIButton()
-        button.setTitle("Rover Postcard Maker", for: .normal)
+        button.setTitle("Mars Rover Images", for: .normal)
         button.setImage(UIImage(named: "25"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
@@ -114,7 +114,7 @@ class HomeViewController: UIViewController {
             ])
         
         // StackView Setup
-        let stackView = UIStackView(arrangedSubviews: [roverPostCardButton, eyeInTheSkyeButton, thirdButton])
+        let stackView = UIStackView(arrangedSubviews: [roverImagesButton, eyeInTheSkyeButton, thirdButton])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
