@@ -90,12 +90,12 @@ class HomeViewController: UIViewController {
         if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
             
             let toImage = UIImage(named: "ipad_background_port_x2")
-            transitionImageView(toImage: toImage!)
+            transitionImageView(toImage!)
             
         } else {
     
             let toImage = UIImage(named: "ipad_background_hori_x2")
-            transitionImageView(toImage: toImage!)
+            transitionImageView(toImage!)
             
         }
     }
@@ -140,7 +140,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Transition ImageView
     
-    func transitionImageView(toImage: UIImage) {
+    func transitionImageView(_ toImage: UIImage) {
         
         UIView.transition(with: self.backgroundImageView,
                                   duration:5,

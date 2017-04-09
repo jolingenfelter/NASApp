@@ -14,7 +14,7 @@ enum NASAImages: Endpoint {
     case rover
     case earth
     
-    private var apiKey: String {
+    fileprivate var apiKey: String {
         
         return "X42XktIUyfM17ZpPRjTZ1E6asX6vRxXBOC0EWqir"
         
@@ -101,7 +101,7 @@ final class NASAClient: APIClient {
     }
     
     // Fetch Rover Images
-    func fetchRoverImages(completion: @escaping(APIResult<[RoverImage]>) -> Void) {
+    func fetchRoverImages(_ completion: @escaping(APIResult<[RoverImage]>) -> Void) {
         
         guard let url = NASAImages.rover.createURL(withParameters: nil) else {
             return

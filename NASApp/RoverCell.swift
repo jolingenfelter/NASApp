@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class RoverCell: UICollectionViewCell {
     
@@ -30,17 +31,9 @@ class RoverCell: UICollectionViewCell {
     
     func configureCell(withImage image: RoverImage) {
         
-        if image.imageURL != nil {
+        if let imageURL = image.imageURL {
             
-            image.downloadImage(completion: { (roverImage) in
-                
-                DispatchQueue.main.async {
-                    
-                    self.roverImageView.image = roverImage
-                    
-                }
-                
-            })
+            Nuke.loadImage(with: imageURL, into: roverImageView)
             
         }
         

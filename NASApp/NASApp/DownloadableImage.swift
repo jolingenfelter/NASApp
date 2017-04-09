@@ -16,7 +16,7 @@ protocol DownloadableImage {
 
 extension DownloadableImage {
     
-    private func getDataFromImageURL(completion: @escaping(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
+    fileprivate func getDataFromImageURL(_ completion: @escaping(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
         
         guard let imageURL = imageURL else {
             return
@@ -29,7 +29,7 @@ extension DownloadableImage {
         }.resume()
     }
     
-    func downloadImage(completion: @escaping(_ image: UIImage?) -> Void) {
+    func downloadImage(_ completion: @escaping(_ image: UIImage?) -> Void) {
         
         getDataFromImageURL { (data, response, error) in
             guard let data = data, error == nil else {

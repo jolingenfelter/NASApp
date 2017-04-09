@@ -47,7 +47,7 @@ protocol APIClient {
 
 extension APIClient {
     
-    func jsonTaskWithRequest(request: URLRequest, completion: @escaping jsonTaskCompletion) -> jsonTask {
+    func jsonTaskWithRequest(_ request: URLRequest, completion: @escaping jsonTaskCompletion) -> jsonTask {
         
         let task = session.dataTask(with: request) { (data, response, error) in
             
@@ -102,7 +102,7 @@ extension APIClient {
     
     func fetch<T>(_ request: URLRequest, parse: @escaping (json) -> T?, completion: @escaping (APIResult<T>) -> Void) {
         
-        let task = jsonTaskWithRequest(request: request) { (json, response, error) in
+        let task = jsonTaskWithRequest(request) { (json, response, error) in
             
             DispatchQueue.main.async {
                 
