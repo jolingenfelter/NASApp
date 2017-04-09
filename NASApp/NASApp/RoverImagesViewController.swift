@@ -30,6 +30,9 @@ class RoverImagesViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.backgroundColor = AppDelegate.NASABackgroundColor
+        self.title = "Select an Image"
+        let backButton = UIBarButtonItem(title: "Home", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         // Register CollectionViewCell
         self.collectionView.register(RoverCell.self, forCellWithReuseIdentifier: RoverCell.reuseIdentifier)
