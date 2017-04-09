@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
         button.titleLabel?.font = button.titleLabel?.font.withSize(35)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
         button.imageView?.contentMode = .center
+        button.addTarget(self, action: #selector(roverPostCardPressed), for: .touchUpInside)
         
         return button
     }()
@@ -149,5 +150,18 @@ class HomeViewController: UIViewController {
         
     }
 
+}
+
+// MARK: - Navigation
+
+extension HomeViewController {
+    
+    func roverPostCardPressed() {
+        
+        let roverImagesViewController = RoverImagesViewController()
+        navigationController?.pushViewController(roverImagesViewController, animated: true)
+        
+    }
+    
 }
 

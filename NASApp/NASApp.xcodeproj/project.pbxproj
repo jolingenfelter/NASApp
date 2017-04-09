@@ -59,6 +59,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		9E502E631E9AB875006AF819 /* Rover */ = {
+			isa = PBXGroup;
+			children = (
+				9E8CD9E51E966E7200A9B54F /* RoverImagesViewController.swift */,
+			);
+			name = Rover;
+			sourceTree = "<group>";
+		};
 		9E76C0081E919CB50089D2C7 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				9EB65C991E905D3A003E74B6 /* HomeViewController.swift */,
-				9E8CD9E51E966E7200A9B54F /* RoverImagesViewController.swift */,
+				9E502E631E9AB875006AF819 /* Rover */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

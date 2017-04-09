@@ -17,6 +17,7 @@ class RoverCell: UICollectionViewCell {
         
         self.contentView.addSubview(roverImageView)
         roverImageView.translatesAutoresizingMaskIntoConstraints = false
+        roverImageView.contentMode = .scaleToFill
         
         NSLayoutConstraint.activate([
             roverImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -24,6 +25,24 @@ class RoverCell: UICollectionViewCell {
             roverImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             roverImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor)
             ])
+        
+    }
+    
+    func configureCell(withImage image: RoverImage) {
+        
+        if image.imageURL != nil {
+            
+            image.downloadImage(completion: { (roverImage) in
+                
+                DispatchQueue.main.async {
+                    
+                    self.roverImageView.image = roverImage
+                    
+                }
+                
+            })
+            
+        }
         
     }
     

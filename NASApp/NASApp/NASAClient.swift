@@ -110,11 +110,13 @@ final class NASAClient: APIClient {
         let request = URLRequest(url: url)
         
        fetch(request, parse: { (json) -> [RoverImage]? in
-        
+    
         if let roverImages = json["photos"] as? [[String : AnyObject]] {
             
             return roverImages.flatMap({ (imageDictionary) in
-                return RoverImage(json: json)
+                
+                return RoverImage(json: imageDictionary)
+                
             })
             
         } else {
