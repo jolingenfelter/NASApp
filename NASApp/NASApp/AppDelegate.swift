@@ -37,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBarAppearance.tintColor = .white
         navBarAppearance.isTranslucent = false
         navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        // StatusBar
+        UIApplication.shared.statusBarStyle = .lightContent
 
         return true
     }
