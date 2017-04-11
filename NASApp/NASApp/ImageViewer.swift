@@ -39,13 +39,18 @@ class ImageViewer: UIViewController {
         scrollView.flashScrollIndicators()
         
         // ImageView Setup
-        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
         imageView?.contentMode = .scaleAspectFit
         Nuke.loadImage(with: imageURL, into: imageView!)
         
         view.addSubview(scrollView)
         scrollView.addSubview(imageView!)
         
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        imageView?.frame.size = CGSize(width: view.bounds.size.height, height: view.bounds.size.width)
+        imageView?.center = CGPoint(x: view.bounds.height/2, y: view.bounds.width/2)
     }
     
     override func viewDidLayoutSubviews() {
