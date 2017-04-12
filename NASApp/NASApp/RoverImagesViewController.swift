@@ -125,11 +125,7 @@ extension RoverImagesViewController: UICollectionViewDelegate {
         
         let selectedImage = roverImages[indexPath.row]
         
-        guard let imageURL = selectedImage.imageURL else {
-            return
-        }
-        
-        let imageViewer = ImageViewer(imageURL: imageURL)
+        let imageViewer = ImageViewer(image: selectedImage)
         self.navigationController?.pushViewController(imageViewer, animated: true)
         
     }

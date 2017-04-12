@@ -16,6 +16,7 @@
 		9E8CD9E91E966FB000A9B54F /* RoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8CD9E81E966FB000A9B54F /* RoverCell.swift */; };
 		9E9680671E93E65A003D112C /* DownloadableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9680661E93E65A003D112C /* DownloadableImage.swift */; };
 		9E9680691E94492E003D112C /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9680681E94492E003D112C /* Geocoder.swift */; };
+		9E9915B71E9C612A0045CFF3 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9915B61E9C612A0045CFF3 /* ImageScrollView.swift */; };
 		9EB65C981E905D3A003E74B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C971E905D3A003E74B6 /* AppDelegate.swift */; };
 		9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C991E905D3A003E74B6 /* HomeViewController.swift */; };
 		9EB65C9F1E905D3A003E74B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB65C9E1E905D3A003E74B6 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		9E8CD9E81E966FB000A9B54F /* RoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverCell.swift; sourceTree = "<group>"; };
 		9E9680661E93E65A003D112C /* DownloadableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadableImage.swift; sourceTree = "<group>"; };
 		9E9680681E94492E003D112C /* Geocoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
+		9E9915B61E9C612A0045CFF3 /* ImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		9EB65C941E905D3A003E74B6 /* NASApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB65C971E905D3A003E74B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB65C991E905D3A003E74B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		9E9680651E93E637003D112C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9E9915B61E9C612A0045CFF3 /* ImageScrollView.swift */,
 				9E9680661E93E65A003D112C /* DownloadableImage.swift */,
 			);
 			name = Helpers;
@@ -293,6 +296,7 @@
 				9EB65C981E905D3A003E74B6 /* AppDelegate.swift in Sources */,
 				9E8CD9E91E966FB000A9B54F /* RoverCell.swift in Sources */,
 				9E8CD9E61E966E7200A9B54F /* RoverImagesViewController.swift in Sources */,
+				9E9915B71E9C612A0045CFF3 /* ImageScrollView.swift in Sources */,
 				9E3947B51E931D06009AABDA /* RoverImage.swift in Sources */,
 				9E76C00B1E919CCE0089D2C7 /* APIClient.swift in Sources */,
 			);

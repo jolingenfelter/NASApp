@@ -11,12 +11,11 @@ import Nuke
 
 class ImageViewer: UIViewController {
     
-    var imageURL: URL
-    var imageView: ImageView?
-    var scrollView = UIScrollView()
+    var image: DownloadableImage
+    var scrollView = ImageScrollView()
     
-    init(imageURL: URL) {
-        self.imageURL = imageURL
+    init(image: DownloadableImage) {
+        self.image = image
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,29 +27,17 @@ class ImageViewer: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = AppDelegate.NASABackgroundColor
-
-        // ScrollView Setup
-        
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 6.0
-        scrollView.delegate = self
-        scrollView.showsVerticalScrollIndicator = true
-        scrollView.showsHorizontalScrollIndicator = true
-        scrollView.flashScrollIndicators()
-        
-        // ImageView Setup
-        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
-        imageView?.contentMode = .scaleAspectFit
-        Nuke.loadImage(with: imageURL, into: imageView!)
-        
         view.addSubview(scrollView)
-        scrollView.addSubview(imageView!)
         
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        imageView?.frame.size = CGSize(width: view.bounds.size.height, height: view.bounds.size.width)
-        imageView?.center = CGPoint(x: view.bounds.height/2, y: view.bounds.width/2)
+        image.downloadImage { (image) in
+            
+            guard let image = image else {
+                return
+            }
+            
+            self.scrollView.displayImage(image)
+        }
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -69,16 +56,6 @@ class ImageViewer: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-}
-
-// MARK: - UIScrollViewDelegate
-
-extension ImageViewer: UIScrollViewDelegate {
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
     }
     
 }
