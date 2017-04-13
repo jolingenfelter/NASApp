@@ -25,6 +25,7 @@ class RoverImagesViewController: UIViewController {
     
     var roverImages: [RoverImage]?
     let nasaClient = NASAClient()
+    let activityIndicator = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,8 @@ class RoverImagesViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         
+        // Collection View
+        
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -55,22 +58,38 @@ class RoverImagesViewController: UIViewController {
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
             ])
         
+        // ActivityIndicator
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicator.heightAnchor.constraint(equalToConstant: 50),
+            activityIndicator.widthAnchor.constraint(equalToConstant: 50)
+            ])
+        
     }
     
     func fetchRoverImages() {
+        
+        activityIndicator.startAnimating()
         
         nasaClient.fetchRoverImages { (result) in
             
             switch result {
                 
             case .success(let images) :
-                
+    
                 self.roverImages = images
                 self.collectionView.reloadData()
+                self.activityIndicator.stopAnimating()
             
             case .failure(let error):
                 
                 print(error.localizedDescription)
+                self.activityIndicator.stopAnimating()
                 
             }
             
