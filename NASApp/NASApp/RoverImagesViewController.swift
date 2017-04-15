@@ -13,7 +13,7 @@ class RoverImagesViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 250, height: 125)
+        flowLayout.itemSize = CGSize(width: 250, height: 150)
         flowLayout.minimumLineSpacing = 2
         flowLayout.minimumInteritemSpacing = 2
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)

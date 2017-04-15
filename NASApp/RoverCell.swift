@@ -12,13 +12,16 @@ import Nuke
 class RoverCell: UICollectionViewCell {
     
     static let reuseIdentifier = "RoverCell"
-    let roverImageView = UIImageView()
+    var roverImageView: UIImageView?
     
     override func layoutSubviews() {
         
-        self.contentView.addSubview(roverImageView)
+        guard let roverImageView = roverImageView else {
+            return
+        }
+
         roverImageView.translatesAutoresizingMaskIntoConstraints = false
-        roverImageView.contentMode = .scaleToFill
+        roverImageView.contentMode = .scaleAspectFill
         
         NSLayoutConstraint.activate([
             roverImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -31,9 +34,16 @@ class RoverCell: UICollectionViewCell {
     
     func configureCell(withImage image: RoverImage) {
         
+        self.clipsToBounds = true
+        
+        if roverImageView == nil {
+            roverImageView = UIImageView()
+            contentView.addSubview(roverImageView!)
+        }
+        
         if let imageURL = image.imageURL {
             
-            Nuke.loadImage(with: imageURL, into: roverImageView)
+            Nuke.loadImage(with: imageURL, into: roverImageView!)
             
         }
         
