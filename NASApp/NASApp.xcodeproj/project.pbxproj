@@ -21,6 +21,7 @@
 		9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C991E905D3A003E74B6 /* HomeViewController.swift */; };
 		9EB65C9F1E905D3A003E74B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB65C9E1E905D3A003E74B6 /* Assets.xcassets */; };
 		9EB65CA21E905D3A003E74B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB65CA01E905D3A003E74B6 /* LaunchScreen.storyboard */; };
+		9EDCCD6A1EA2C2E200836204 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCCD691EA2C2E200836204 /* Utilities.swift */; };
 		D6561B979DB18B8969451926 /* Pods_NASApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51AFB7E3C54EC4AD6B99EBC /* Pods_NASApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		9EB65C9E1E905D3A003E74B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EB65CA11E905D3A003E74B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EB65CA31E905D3A003E74B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EDCCD691EA2C2E200836204 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F4B5E3D3D858CA6304EB2FC8 /* Pods-NASApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-NASApp/Pods-NASApp.release.xcconfig"; sourceTree = "<group>"; };
 		F51AFB7E3C54EC4AD6B99EBC /* Pods_NASApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			children = (
 				9E9915B61E9C612A0045CFF3 /* ImageScrollView.swift */,
 				9E9680661E93E65A003D112C /* DownloadableImage.swift */,
+				9EDCCD691EA2C2E200836204 /* Utilities.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				9E9680691E94492E003D112C /* Geocoder.swift in Sources */,
 				9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */,
 				9E502E651E9AE9D3006AF819 /* ImageViewer.swift in Sources */,
+				9EDCCD6A1EA2C2E200836204 /* Utilities.swift in Sources */,
 				9E3947B31E93168B009AABDA /* EarthImage.swift in Sources */,
 				9E76C00D1E91A7B40089D2C7 /* NASAClient.swift in Sources */,
 				9EB65C981E905D3A003E74B6 /* AppDelegate.swift in Sources */,

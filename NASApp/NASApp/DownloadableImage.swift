@@ -37,6 +37,9 @@ extension DownloadableImage {
         
         getDataFromImageURL { (data, response, error) in
             guard let data = data, error == nil else {
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
+                
                 return
             }
             
@@ -50,7 +53,6 @@ extension DownloadableImage {
                     
                 } else {
                     
-                    print("Unable to download image")
                     self.activityIndicator?.stopAnimating()
                     self.activityIndicator?.isHidden = true
                     

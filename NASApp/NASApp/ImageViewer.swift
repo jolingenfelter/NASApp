@@ -41,6 +41,12 @@ class ImageViewer: UIViewController {
             self.scrollView.displayImage(image)
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(failedDownloadAlert), name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,6 +71,10 @@ class ImageViewer: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func failedDownloadAlert() {
+        presentAlert(withTitle: "Oh no!", andMessage: "This image is unavailable")
     }
     
 }
