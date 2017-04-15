@@ -6,10 +6,11 @@
 //  Copyright © 2017 JoLingenfelter. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct RoverImage: DownloadableImage {
     
+    var activityIndicator: UIActivityIndicatorView?
     var imageURL: URL?
     
     init?(json: json) {

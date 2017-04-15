@@ -6,10 +6,11 @@
 //  Copyright © 2017 JoLingenfelter. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct EarthImage: DownloadableImage {
     
+    var activityIndicator: UIActivityIndicatorView?
     var imageURL: URL?
     
     init?(json: json) {

@@ -13,7 +13,7 @@ class RoverImagesViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 200, height: 200)
+        flowLayout.itemSize = CGSize(width: 250, height: 125)
         flowLayout.minimumLineSpacing = 2
         flowLayout.minimumInteritemSpacing = 2
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
@@ -148,5 +148,4 @@ extension RoverImagesViewController: UICollectionViewDelegate {
         self.navigationController?.pushViewController(imageViewer, animated: true)
         
     }
-    
 }

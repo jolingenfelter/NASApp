@@ -11,6 +11,7 @@ import UIKit
 protocol DownloadableImage {
     
     var imageURL: URL? { get }
+    var activityIndicator: UIActivityIndicatorView? { get set }
     
 }
 
@@ -31,6 +32,9 @@ extension DownloadableImage {
     
     func downloadImage(_ completion: @escaping(_ image: UIImage?) -> Void) {
         
+        activityIndicator?.isHidden = false
+        activityIndicator?.startAnimating()
+        
         getDataFromImageURL { (data, response, error) in
             guard let data = data, error == nil else {
                 return
@@ -41,10 +45,14 @@ extension DownloadableImage {
                 if let image = UIImage(data: data) {
                     
                     completion(image)
+                    self.activityIndicator?.stopAnimating()
+                    self.activityIndicator?.isHidden = true
                     
                 } else {
                     
                     print("Unable to download image")
+                    self.activityIndicator?.stopAnimating()
+                    self.activityIndicator?.isHidden = true
                     
                 }
                 

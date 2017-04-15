@@ -13,6 +13,7 @@ class ImageViewer: UIViewController {
     
     var image: DownloadableImage
     var scrollView = ImageScrollView()
+    var activityIndicator = UIActivityIndicatorView()
     
     init(image: DownloadableImage) {
         self.image = image
@@ -28,6 +29,8 @@ class ImageViewer: UIViewController {
         
         view.backgroundColor = AppDelegate.NASABackgroundColor
         view.addSubview(scrollView)
+        image.activityIndicator = activityIndicator
+        view.addSubview(activityIndicator)
         
         image.downloadImage { (image) in
             
@@ -49,6 +52,12 @@ class ImageViewer: UIViewController {
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
             scrollView.rightAnchor.constraint(equalTo: view.rightAnchor)
+            ])
+        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
         
     }
