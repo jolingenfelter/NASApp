@@ -127,6 +127,11 @@ extension RoverImagesViewController: UICollectionViewDataSource {
             
         }
         
+        if let saveButton = cell.saveButton, let shareButton = cell.messageButton {
+            saveButton.addTarget(self, action: #selector(saveImage(sender:)), for: .touchUpInside)
+            shareButton.addTarget(self, action: #selector(shareImage(sender:)), for: .touchUpInside)
+        }
+        
         return cell
     }
     
@@ -149,3 +154,77 @@ extension RoverImagesViewController: UICollectionViewDelegate {
         
     }
 }
+
+// MARK: - Save and Share Buttons
+
+extension RoverImagesViewController {
+    
+    func saveImage(sender: UIButton) {
+        
+        let point = sender.convert(CGPoint.zero, to: collectionView)
+        
+        guard let indexPath = collectionView.indexPathForItem(at: point), let roverImages = roverImages else {
+            return
+        }
+        
+        let roverImage = roverImages[indexPath.row]
+        
+        let alert = UIAlertController(title: "Save Image", message: "Do you want to save this image to your Photo Library?", preferredStyle: .alert)
+        
+        // OK save image
+        let okAction = UIAlertAction(title: "Ok", style: .cancel) { (okAction) in
+            
+            roverImage.downloadImage({ (roverImage) in
+                
+                guard let roverImage = roverImage else {
+                    return
+                }
+                
+                self.saveImageToPhotoLibrary(image: roverImage)
+                
+            })
+            
+        }
+        
+        alert.addAction(okAction)
+        
+        // Cancel
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func shareImage(sender: UIButton) {
+        
+        let point = sender.convert(CGPoint.zero, to: collectionView)
+        
+        guard let indexPath = collectionView.indexPathForItem(at: point), let roverImages = roverImages else {
+            return
+        }
+        
+        let roverImage = roverImages[indexPath.row]
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

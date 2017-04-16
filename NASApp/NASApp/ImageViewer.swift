@@ -74,7 +74,7 @@ class ImageViewer: UIViewController {
     }
     
     func failedDownloadAlert() {
-        presentAlert(withTitle: "Oh no!", andMessage: "This image is unavailable")
+        presentAlert(withTitle: "Oh no!", message: "This image is unavailable", OkResponseAction: .toRootViewController)
     }
     
 }
