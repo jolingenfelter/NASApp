@@ -37,7 +37,7 @@ class RoverCell: UICollectionViewCell {
             saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             saveButton.heightAnchor.constraint(equalToConstant: 40),
-            saveButton.widthAnchor.constraint(equalToConstant: 20)
+            saveButton.widthAnchor.constraint(equalToConstant: 40)
             ])
         
     }
