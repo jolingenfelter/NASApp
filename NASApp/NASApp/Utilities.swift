@@ -47,7 +47,7 @@ extension UIViewController {
                 
             case .authorized:
                 
-                UIImageWriteToSavedPhotosAlbum(image, self, #selector(UIViewController.image(_:didFinishSavingWithError:)), nil)
+                UIImageWriteToSavedPhotosAlbum(image, self, #selector(UIViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
                 
             default:
                 
@@ -59,7 +59,7 @@ extension UIViewController {
         
     }
     
-    func image(_ image: UIImage, didFinishSavingWithError error: NSError?) {
+    func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
         
         guard error == nil else {
             

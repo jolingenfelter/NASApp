@@ -59,7 +59,7 @@ class RoverCell: UICollectionViewCell {
         
         if messageButton == nil {
             messageButton = UIButton()
-            messageButton!.setImage(UIImage(named: "10"), for: .normal)
+            messageButton!.setImage(UIImage(named: "9"), for: .normal)
             messageButton!.imageView?.contentMode = .scaleAspectFit
             contentView.addSubview(messageButton!)
         }

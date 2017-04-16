@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class RoverImagesViewController: UIViewController {
     
@@ -205,6 +206,26 @@ extension RoverImagesViewController {
         }
         
         let roverImage = roverImages[indexPath.row]
+        let cell = collectionView.cellForItem(at: indexPath) as! RoverCell
+        
+        presentActivityControllerToShare(roverImage: roverImage, forCell: cell)
+        
+    }
+    
+    func presentActivityControllerToShare(roverImage: RoverImage, forCell cell: RoverCell) {
+        
+        roverImage.downloadImage { (image) in
+            
+            guard let image = image else {
+                return
+            }
+            
+            let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            activityController.popoverPresentationController?.sourceView = cell
+            activityController.excludedActivityTypes = [UIActivityType.saveToCameraRoll]
+            
+            self.present(activityController, animated: true, completion: nil)
+        }
         
     }
     
