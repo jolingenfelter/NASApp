@@ -13,12 +13,11 @@ class RoverCell: UICollectionViewCell {
     
     static let reuseIdentifier = "RoverCell"
     var roverImageView: UIImageView?
-    var messageButton: UIButton?
     var saveButton: UIButton?
     
     override func layoutSubviews() {
         
-        guard let roverImageView = roverImageView else {
+        guard let roverImageView = roverImageView, let saveButton = saveButton else {
             return
         }
 
@@ -32,18 +31,13 @@ class RoverCell: UICollectionViewCell {
             roverImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor)
             ])
         
-        let stackView = UIStackView(arrangedSubviews: [saveButton!, messageButton!])
-        contentView.addSubview(stackView)
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.spacing = 6
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            stackView.heightAnchor.constraint(equalToConstant: 40),
-            stackView.widthAnchor.constraint(equalToConstant: 60)
+            saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            saveButton.heightAnchor.constraint(equalToConstant: 40),
+            saveButton.widthAnchor.constraint(equalToConstant: 20)
             ])
         
     }
@@ -55,13 +49,6 @@ class RoverCell: UICollectionViewCell {
         if roverImageView == nil {
             roverImageView = UIImageView()
             contentView.addSubview(roverImageView!)
-        }
-        
-        if messageButton == nil {
-            messageButton = UIButton()
-            messageButton!.setImage(UIImage(named: "9"), for: .normal)
-            messageButton!.imageView?.contentMode = .scaleAspectFit
-            contentView.addSubview(messageButton!)
         }
         
         if saveButton == nil {
