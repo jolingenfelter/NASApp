@@ -49,6 +49,7 @@ class HomeViewController: UIViewController {
         button.titleLabel?.font = button.titleLabel?.font.withSize(35)
         button.imageEdgeInsets = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 80)
         button.imageView?.contentMode = .center
+        button.addTarget(self, action: #selector(eyeInTheSkyPressed), for: .touchUpInside)
         
         return button
     }()
@@ -160,6 +161,13 @@ extension HomeViewController {
         
         let roverImagesViewController = RoverImagesViewController()
         navigationController?.pushViewController(roverImagesViewController, animated: true)
+        
+    }
+    
+    func eyeInTheSkyPressed() {
+        
+        let eyeInTheSkySearchController = EyeInTheSkySearchViewController()
+        navigationController?.pushViewController(eyeInTheSkySearchController, animated: true)
         
     }
     

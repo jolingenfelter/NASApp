@@ -17,6 +17,7 @@
 		9E9680671E93E65A003D112C /* DownloadableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9680661E93E65A003D112C /* DownloadableImage.swift */; };
 		9E9680691E94492E003D112C /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9680681E94492E003D112C /* Geocoder.swift */; };
 		9E9915B71E9C612A0045CFF3 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9915B61E9C612A0045CFF3 /* ImageScrollView.swift */; };
+		9EAE6D221EA442FF0076666E /* EyeInTheSkySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6D211EA442FF0076666E /* EyeInTheSkySearchViewController.swift */; };
 		9EB65C981E905D3A003E74B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C971E905D3A003E74B6 /* AppDelegate.swift */; };
 		9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C991E905D3A003E74B6 /* HomeViewController.swift */; };
 		9EB65C9F1E905D3A003E74B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB65C9E1E905D3A003E74B6 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		9E9680661E93E65A003D112C /* DownloadableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadableImage.swift; sourceTree = "<group>"; };
 		9E9680681E94492E003D112C /* Geocoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		9E9915B61E9C612A0045CFF3 /* ImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
+		9EAE6D211EA442FF0076666E /* EyeInTheSkySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeInTheSkySearchViewController.swift; sourceTree = "<group>"; };
 		9EB65C941E905D3A003E74B6 /* NASApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB65C971E905D3A003E74B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB65C991E905D3A003E74B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		9EF75FFE1EA3F5A9006B1B38 /* EyeInTheSky */ = {
 			isa = PBXGroup;
 			children = (
+				9EAE6D211EA442FF0076666E /* EyeInTheSkySearchViewController.swift */,
 			);
 			name = EyeInTheSky;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E9680671E93E65A003D112C /* DownloadableImage.swift in Sources */,
+				9EAE6D221EA442FF0076666E /* EyeInTheSkySearchViewController.swift in Sources */,
 				9E9680691E94492E003D112C /* Geocoder.swift in Sources */,
 				9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */,
 				9E502E651E9AE9D3006AF819 /* ImageViewer.swift in Sources */,
