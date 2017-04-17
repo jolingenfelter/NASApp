@@ -100,6 +100,7 @@
 			children = (
 				9E502E641E9AE9D3006AF819 /* ImageViewer.swift */,
 				9EB65C991E905D3A003E74B6 /* HomeViewController.swift */,
+				9EF75FFE1EA3F5A9006B1B38 /* EyeInTheSky */,
 				9E502E631E9AB875006AF819 /* Rover */,
 			);
 			name = Controllers;
@@ -155,6 +156,13 @@
 				9EB65CA31E905D3A003E74B6 /* Info.plist */,
 			);
 			path = NASApp;
+			sourceTree = "<group>";
+		};
+		9EF75FFE1EA3F5A9006B1B38 /* EyeInTheSky */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EyeInTheSky;
 			sourceTree = "<group>";
 		};
 		A48EC60D6F8A4C7AA7B2863B /* Pods */ = {
@@ -419,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26A159A6AED2B5CB4D448335 /* Pods-NASApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2K6RX929EU;
 				INFOPLIST_FILE = NASApp/Info.plist;
@@ -434,6 +443,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4B5E3D3D858CA6304EB2FC8 /* Pods-NASApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2K6RX929EU;
 				INFOPLIST_FILE = NASApp/Info.plist;

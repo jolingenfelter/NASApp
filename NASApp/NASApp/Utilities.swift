@@ -15,6 +15,8 @@ enum AlertResponseAction {
     
 }
 
+// MARK: - UIViewController Extension
+
 extension UIViewController {
     
     func presentAlert(withTitle title: String, message: String, OkResponseAction okResponseAction: AlertResponseAction) {
@@ -37,5 +39,22 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+}
+
+// Resize Images
+
+func imageWithName(image: UIImage, scaledToSize newSize: CGSize) -> UIImage? {
+    
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+    image.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: newSize.width, height: newSize.height)))
+    
+    guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else {
+        return nil
+    }
+    
+    UIGraphicsEndImageContext()
+    
+    return newImage
     
 }

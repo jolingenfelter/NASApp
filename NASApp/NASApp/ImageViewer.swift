@@ -12,8 +12,10 @@ import Nuke
 class ImageViewer: UIViewController {
     
     var image: DownloadableImage
+    var downloadedImage: UIImage?
     var scrollView = ImageScrollView()
     var activityIndicator = UIActivityIndicatorView()
+    var saveOrShareButton: UIBarButtonItem?
     
     init(image: DownloadableImage) {
         self.image = image
@@ -27,6 +29,7 @@ class ImageViewer: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // View Setup
         view.backgroundColor = AppDelegate.NASABackgroundColor
         view.addSubview(scrollView)
         image.activityIndicator = activityIndicator
@@ -35,12 +38,21 @@ class ImageViewer: UIViewController {
         image.downloadImage { (image) in
             
             guard let image = image else {
+                
+                self.presentAlert(withTitle: "Uh oh!", message: "This image cannot be downloaded at this time.  Check your network connection", OkResponseAction: .toRootViewController)
+                
                 return
             }
             
+            self.downloadedImage = image
             self.scrollView.displayImage(image)
         }
         
+        let saveOrShareButtonImage = imageWithName(image: UIImage(named: "15")!, scaledToSize: CGSize(width: 17, height: 30))
+        saveOrShareButton = UIBarButtonItem(image: saveOrShareButtonImage, style: .plain, target: self, action: #selector(saveOrShareImage))
+        navigationItem.rightBarButtonItem = saveOrShareButton
+        
+        // Notifications
         NotificationCenter.default.addObserver(self, selector: #selector(failedDownloadAlert), name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
         
     }
@@ -75,6 +87,22 @@ class ImageViewer: UIViewController {
     
     func failedDownloadAlert() {
         presentAlert(withTitle: "Oh no!", message: "This image is unavailable", OkResponseAction: .toRootViewController)
+    }
+    
+    func saveOrShareImage() {
+        
+        guard let image = downloadedImage else {
+            
+            presentAlert(withTitle: "Oops!", message: "Unable to save or share image.  Check your network connection", OkResponseAction: .cancel)
+            
+            return
+        }
+        
+        let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        activityController.popoverPresentationController?.barButtonItem = saveOrShareButton!
+        
+        self.present(activityController, animated: true, completion: nil)
+        
     }
     
 }
