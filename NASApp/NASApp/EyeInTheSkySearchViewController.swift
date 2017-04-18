@@ -17,7 +17,7 @@ class EyeInTheSkySearchViewController: UIViewController {
         
         let tableView = UITableView()
         tableView.delegate = self
-        //tableView.dataSource = self
+        tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.isHidden = true
         
@@ -27,6 +27,14 @@ class EyeInTheSkySearchViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     let searchBar: UISearchBar
     let mapView = MKMapView()
+    var searchItems: [MKLocalSearchCompletion] = []
+    
+    lazy var searchCompleter: MKLocalSearchCompleter = {
+        let completer = MKLocalSearchCompleter()
+        completer.delegate = self
+        return completer
+    }()
+    
     
     init() {
         searchBar = searchController.searchBar
@@ -73,6 +81,18 @@ class EyeInTheSkySearchViewController: UIViewController {
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
         
+        
+        // TableView
+        
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,26 +102,94 @@ class EyeInTheSkySearchViewController: UIViewController {
 
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
-extension EyeInTheSkySearchViewController: UITableViewDelegate {
+extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        searchBar.text = searchItems[indexPath.row].subtitle
+        tableView.isHidden = true
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let  cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        
+        let location = searchItems[indexPath.row]
+        
+        cell.textLabel?.text = location.title
+        cell.detailTextLabel?.text = location.subtitle
+        
+        return cell
+        
+    }
     
 }
 
-// MARK: - UITableViewDataSource
-
-//extension EyeInTheSkySearchViewController: UITableViewDataSource {
-//    
-//}
 
 // MARK: - SearchBar
 
-extension EyeInTheSkySearchViewController {
+extension EyeInTheSkySearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func setupSearchController() {
         
         searchController.hidesNavigationBarDuringPresentation = false
+        searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
         
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        guard let searchText = searchBar.text else {
+            return
+        }
+        
+        searchCompleter.queryFragment = searchText
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        tableView.isHidden = true
+        searchItems = []
+        tableView.reloadData()
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tableView.isHidden = false
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        tableView.isHidden = true
+    }
+    
+}
+
+// MARK: - MKLocalSearchCompleterDelegate 
+
+extension EyeInTheSkySearchViewController: MKLocalSearchCompleterDelegate {
+    
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        self.searchItems = completer.results
+        tableView.reloadData()
     }
     
 }
