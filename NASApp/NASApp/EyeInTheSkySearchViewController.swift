@@ -26,19 +26,25 @@ class EyeInTheSkySearchViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let searchBar: UISearchBar
-    let mapView = MKMapView()
     var searchItems: [MKLocalSearchCompletion] = []
+    var mapView: JLMapView
     
     lazy var searchCompleter: MKLocalSearchCompleter = {
+        
         let completer = MKLocalSearchCompleter()
         completer.delegate = self
+        
         return completer
     }()
     
-    
     init() {
+        
         searchBar = searchController.searchBar
+        mapView = JLMapView(searchCompleter: nil)
+        
         super.init(nibName: nil, bundle: nil)
+        
+        mapView.searchCompleter = searchCompleter
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -110,6 +116,26 @@ extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataS
         
         searchBar.text = searchItems[indexPath.row].subtitle
         tableView.isHidden = true
+        
+        let location = searchItems[indexPath.row]
+        
+        let searchRequest = MKLocalSearchRequest(completion: location)
+        let search = MKLocalSearch(request: searchRequest)
+        search.start { (response, error) in
+            
+            DispatchQueue.main.async {
+                
+                guard let response = response, let mapItem = response.mapItems.first else {
+                    return
+                }
+                
+                let placemark = mapItem.placemark
+                
+                
+                
+            }
+            
+        }
         
     }
     

@@ -22,6 +22,7 @@
 		9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB65C991E905D3A003E74B6 /* HomeViewController.swift */; };
 		9EB65C9F1E905D3A003E74B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB65C9E1E905D3A003E74B6 /* Assets.xcassets */; };
 		9EB65CA21E905D3A003E74B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB65CA01E905D3A003E74B6 /* LaunchScreen.storyboard */; };
+		9EDA4A3D1EA6F72A00DA0BB0 /* JLMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4A3C1EA6F72A00DA0BB0 /* JLMapView.swift */; };
 		9EDCCD6A1EA2C2E200836204 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCCD691EA2C2E200836204 /* Utilities.swift */; };
 		D6561B979DB18B8969451926 /* Pods_NASApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51AFB7E3C54EC4AD6B99EBC /* Pods_NASApp.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		9EB65C9E1E905D3A003E74B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EB65CA11E905D3A003E74B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EB65CA31E905D3A003E74B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EDA4A3C1EA6F72A00DA0BB0 /* JLMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLMapView.swift; sourceTree = "<group>"; };
 		9EDCCD691EA2C2E200836204 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F4B5E3D3D858CA6304EB2FC8 /* Pods-NASApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-NASApp/Pods-NASApp.release.xcconfig"; sourceTree = "<group>"; };
 		F51AFB7E3C54EC4AD6B99EBC /* Pods_NASApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				9E3947B21E93168B009AABDA /* EarthImage.swift */,
 				9E3947B41E931D06009AABDA /* RoverImage.swift */,
 				9E9680681E94492E003D112C /* Geocoder.swift */,
+				9EDA4A3C1EA6F72A00DA0BB0 /* JLMapView.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				9E8CD9E91E966FB000A9B54F /* RoverCell.swift in Sources */,
 				9E8CD9E61E966E7200A9B54F /* RoverImagesViewController.swift in Sources */,
 				9E9915B71E9C612A0045CFF3 /* ImageScrollView.swift in Sources */,
+				9EDA4A3D1EA6F72A00DA0BB0 /* JLMapView.swift in Sources */,
 				9E3947B51E931D06009AABDA /* RoverImage.swift in Sources */,
 				9E76C00B1E919CCE0089D2C7 /* APIClient.swift in Sources */,
 			);
