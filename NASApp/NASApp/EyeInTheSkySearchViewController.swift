@@ -116,6 +116,7 @@ extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataS
         
         searchBar.text = searchItems[indexPath.row].subtitle
         tableView.isHidden = true
+        searchBar.resignFirstResponder()
         
         let location = searchItems[indexPath.row]
         
@@ -131,7 +132,7 @@ extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataS
                 
                 let placemark = mapItem.placemark
                 
-                
+                self.mapView.dropPinAndZoom(placemark: placemark)
                 
             }
             

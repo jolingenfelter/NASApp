@@ -8,14 +8,20 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class JLMapView: MKMapView {
     
     var searchCompleter: MKLocalSearchCompleter?
+    let geocoder = CLGeocoder()
     
     init(searchCompleter: MKLocalSearchCompleter?) {
         self.searchCompleter = nil
         super.init(frame: CGRect.zero)
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressToDropPin(gestureRecognizer:)))
+        self.addGestureRecognizer(longPress)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,6 +52,39 @@ class JLMapView: MKMapView {
         
         let location = CLLocation(latitude: placemark.coordinate.latitude, longitude: placemark.coordinate.longitude)
         self.add(MKCircle(center: location.coordinate, radius: 50))
+        
+    }
+    
+    func longPressToDropPin(gestureRecognizer: UILongPressGestureRecognizer) {
+        
+        let point = gestureRecognizer.location(in: self)
+        let coordinate = self.convert(point, toCoordinateFrom: self)
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            
+            guard let placemark = placemarks?.first else {
+                return
+            }
+            
+            let mapViewPlacemark = MKPlacemark(placemark: placemark)
+            
+            DispatchQueue.main.async {
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = mapViewPlacemark.coordinate
+                annotation.title = placemark.name
+                
+                self.removeAnnotations(self.annotations)
+                self.addAnnotation(annotation)
+                
+    
+                self.setMapViewRegion(coordinate: annotation.coordinate)
+        
+                
+            }
+            
+        }
         
     }
 

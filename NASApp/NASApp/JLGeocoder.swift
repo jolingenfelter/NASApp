@@ -1,5 +1,5 @@
 //
-//  Geocoder.swift
+//  JLGeocoder.swift
 //  NASApp
 //
 //  Created by Joanna Lingenfelter on 4/4/17.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class Geocoder {
+class JLGeocoder {
     
     let geocoder = CLGeocoder()
     

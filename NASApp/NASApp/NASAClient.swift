@@ -64,7 +64,7 @@ final class NASAClient: APIClient {
         return URLSession(configuration: self.configuration)
     }()
     
-    let geocoder = Geocoder()
+    let geocoder = JLGeocoder()
     
     init(configuration: URLSessionConfiguration) {
         self.configuration = configuration
