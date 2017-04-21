@@ -189,6 +189,36 @@ extension EyeInTheSkySearchViewController: UISearchResultsUpdating, UISearchBarD
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        
+        if searchBar.text != nil {
+            
+            searchBar.text = searchItems.first?.title
+            
+            guard let location = searchItems.first else {
+                return
+            }
+            
+            let searchRequest = MKLocalSearchRequest(completion: location)
+            let search = MKLocalSearch(request: searchRequest)
+            search.start { (response, error) in
+                
+                DispatchQueue.main.async {
+                    
+                    guard let response = response, let mapItem = response.mapItems.first else {
+                        return
+                    }
+                    
+                    let placemark = mapItem.placemark
+                    
+                    self.mapView.dropPinAndZoom(placemark: placemark)
+                    
+                }
+                
+            }
+
+            
+        }
+        
         searchBar.setShowsCancelButton(false, animated: true)
     }
     
