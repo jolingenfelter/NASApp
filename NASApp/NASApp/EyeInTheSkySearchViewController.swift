@@ -114,7 +114,7 @@ extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        searchBar.text = searchItems[indexPath.row].subtitle
+        searchBar.text = searchItems[indexPath.row].title
         tableView.isHidden = true
         searchBar.resignFirstResponder()
         
