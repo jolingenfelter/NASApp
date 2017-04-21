@@ -105,20 +105,8 @@ class EyeInTheSkySearchViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-}
-
-// MARK: - UITableViewDelegate & UITableViewDataSource
-
-extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        searchBar.text = searchItems[indexPath.row].title
-        tableView.isHidden = true
-        searchBar.resignFirstResponder()
-        
-        let location = searchItems[indexPath.row]
+    func mapViewSearchAndZoomInOn(location: MKLocalSearchCompletion) {
         
         let searchRequest = MKLocalSearchRequest(completion: location)
         let search = MKLocalSearch(request: searchRequest)
@@ -137,6 +125,24 @@ extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataS
             }
             
         }
+        
+    }
+
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
+extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        searchBar.text = searchItems[indexPath.row].title
+        tableView.isHidden = true
+        searchBar.resignFirstResponder()
+        
+        let location = searchItems[indexPath.row]
+        
+        mapViewSearchAndZoomInOn(location: location)
         
     }
     
@@ -197,25 +203,8 @@ extension EyeInTheSkySearchViewController: UISearchResultsUpdating, UISearchBarD
             guard let location = searchItems.first else {
                 return
             }
-            
-            let searchRequest = MKLocalSearchRequest(completion: location)
-            let search = MKLocalSearch(request: searchRequest)
-            search.start { (response, error) in
-                
-                DispatchQueue.main.async {
-                    
-                    guard let response = response, let mapItem = response.mapItems.first else {
-                        return
-                    }
-                    
-                    let placemark = mapItem.placemark
-                    
-                    self.mapView.dropPinAndZoom(placemark: placemark)
-                    
-                }
-                
-            }
 
+            mapViewSearchAndZoomInOn(location: location)
             
         }
         
