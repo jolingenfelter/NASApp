@@ -28,6 +28,7 @@ class EyeInTheSkySearchViewController: UIViewController {
     let searchBar: UISearchBar
     var searchItems: [MKLocalSearchCompletion] = []
     var mapView: JLMapView
+    var searchedLocation: CLLocation?
     
     lazy var searchCompleter: MKLocalSearchCompleter = {
         
@@ -119,6 +120,8 @@ class EyeInTheSkySearchViewController: UIViewController {
                 }
                 
                 let placemark = mapItem.placemark
+                
+                self.searchedLocation = placemark.location
                 
                 self.mapView.dropPinAndZoom(placemark: placemark)
                 

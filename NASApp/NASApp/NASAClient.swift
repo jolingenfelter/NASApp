@@ -8,6 +8,7 @@
 
 import Foundation
 import Contacts
+import CoreLocation
 
 enum NASAImages: Endpoint {
     
@@ -64,8 +65,6 @@ final class NASAClient: APIClient {
         return URLSession(configuration: self.configuration)
     }()
     
-    let geocoder = JLGeocoder()
-    
     init(configuration: URLSessionConfiguration) {
         self.configuration = configuration
     }
@@ -74,30 +73,25 @@ final class NASAClient: APIClient {
         self.init(configuration: .default)
     }
     
-    // Fetch Earth Image for Address
-    func fetchEarthImage(forAddress address: String, completion: @escaping(APIResult<EarthImage>) -> Void) {
+    // Fetch Earth Image for Location
+    
+    func fetchEarthImage(forLocation location: CLLocation, completion: @escaping(APIResult<EarthImage>) -> Void) {
         
-        geocoder.address(fromString: address) { (location, error) in
-            
-            guard let location = location else {
-                return
-            }
-            
-            guard let url = NASAImages.earth.createURL(withParameters: ["latitude" : location.coordinate.latitude, "longitude" : location.coordinate.longitude]) else {
-                return
-            }
-            
-            let request = URLRequest(url: url)
-            
-            self.fetch(request, parse: { (json) -> EarthImage? in
-                
-                let imageDictionary = json
-                
-                return EarthImage(json: imageDictionary)
-                
-            }, completion: completion)
-            
+        guard let url = NASAImages.earth.createURL(withParameters: ["latitude" : location.coordinate.latitude, "longitude" : location.coordinate.longitude]) else {
+            return
         }
+        
+        let request = URLRequest(url: url)
+        
+        self.fetch(request, parse: { (json) -> EarthImage? in
+            
+            let imageDictionary = json
+            
+            return EarthImage(json: imageDictionary)
+            
+            
+        }, completion: completion)
+        
     }
     
     // Fetch Rover Images
