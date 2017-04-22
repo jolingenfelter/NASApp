@@ -60,6 +60,7 @@ class EyeInTheSkySearchViewController: UIViewController {
         self.definesPresentationContext = true
         
         setupSearchController()
+        navBarSetup()
         
     }
     
@@ -126,6 +127,46 @@ class EyeInTheSkySearchViewController: UIViewController {
                 self.mapView.dropPinAndZoom(placemark: placemark)
                 
             }
+            
+        }
+        
+    }
+    
+    // MARK: - Navigation
+    
+    func navBarSetup() {
+        
+        let satelliteViewButton = UIBarButtonItem(title: "Satellite View", style: .plain, target: self, action: #selector(satelliteViewPressed))
+        navigationItem.rightBarButtonItem = satelliteViewButton
+        
+    }
+    
+    func satelliteViewPressed() {
+        
+        if searchedLocation == nil {
+            
+            presentAlert(withTitle: "Oops!", message: "You must select a location to see the satellite image", OkResponseAction: .cancel)
+            
+        } else {
+            
+            let nasaClient = NASAClient()
+            nasaClient.fetchEarthImage(forLocation: searchedLocation!, completion: { (result) in
+                
+                switch result {
+                    
+                case .success(let earthImage):
+                    
+                    let imageViewer = ImageViewer(image: earthImage)
+                    self.navigationController?.pushViewController(imageViewer, animated: true)
+                    
+                case .failure(let error):
+                    
+                    self.presentAlert(withTitle: "Oops", message: "Something went wrong: \(error.localizedDescription)", OkResponseAction: .cancel)
+                    
+                }
+                
+            })
+        
             
         }
         
