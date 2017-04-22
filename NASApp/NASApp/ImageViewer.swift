@@ -9,14 +9,6 @@
 import UIKit
 import Nuke
 
-enum NASAImageType {
-    
-    case earth
-    case rover
-    case pictureOfTheDay
-    
-}
-
 class ImageViewer: UIViewController {
     
     var image: DownloadableImage
@@ -25,7 +17,7 @@ class ImageViewer: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     var saveOrShareButton: UIBarButtonItem?
     
-    init(image: DownloadableImage, imageType: NASAImageType) {
+    init(image: DownloadableImage) {
         self.image = image
         super.init(nibName: nil, bundle: nil)
     }
@@ -56,9 +48,7 @@ class ImageViewer: UIViewController {
             self.scrollView.displayImage(image)
         }
         
-        let saveOrShareButtonImage = imageWithName(image: UIImage(named: "15")!, scaledToSize: CGSize(width: 17, height: 30))
-        saveOrShareButton = UIBarButtonItem(image: saveOrShareButtonImage, style: .plain, target: self, action: #selector(saveOrShareImage))
-        navigationItem.rightBarButtonItem = saveOrShareButton
+        navBarSetup(forNASAImage: image as! NASAImage)
         
         // Notifications
         NotificationCenter.default.addObserver(self, selector: #selector(failedDownloadAlert), name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
@@ -95,6 +85,44 @@ class ImageViewer: UIViewController {
     
     func failedDownloadAlert() {
         presentAlert(withTitle: "Oh no!", message: "This image is unavailable", OkResponseAction: .toRootViewController)
+    }
+    
+    // NavigationBar
+    
+    func navBarSetup(forNASAImage nasaImage: NASAImage) {
+        
+        let saveOrShareButtonImage = imageWithName(image: UIImage(named: "15")!, scaledToSize: CGSize(width: 17, height: 30))
+        saveOrShareButton = UIBarButtonItem(image: saveOrShareButtonImage, style: .plain, target: self, action: #selector(saveOrShareImage))
+        
+        switch nasaImage.type {
+            
+        case .earth:
+            
+            navigationItem.rightBarButtonItem = saveOrShareButton
+            let earthImage = image as! EarthImage
+            self.title = earthImage.date
+            
+        case .rover:
+            
+            navigationItem.rightBarButtonItem = saveOrShareButton
+            let roverImage = image as! RoverImage
+            self.title = roverImage.date
+        
+        case .apod:
+            
+            let infoButton = UIBarButtonItem(title: "info", style: .plain, target: self, action: #selector(infoPressed))
+            navigationItem.rightBarButtonItems = [infoButton, saveOrShareButton!]
+            
+            let apod = image as! APOD
+            self.title = apod.date
+            
+        }
+        
+        
+    }
+    
+    func infoPressed() {
+        
     }
     
     func saveOrShareImage() {

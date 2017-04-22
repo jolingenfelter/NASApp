@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E2656FE1EABD9CD00B986F2 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2656FD1EABD9CD00B986F2 /* APOD.swift */; };
+		9E2657001EABE20900B986F2 /* ImageInfoViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2656FF1EABE20900B986F2 /* ImageInfoViewer.swift */; };
 		9E3947B31E93168B009AABDA /* EarthImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3947B21E93168B009AABDA /* EarthImage.swift */; };
 		9E3947B51E931D06009AABDA /* RoverImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3947B41E931D06009AABDA /* RoverImage.swift */; };
 		9E502E651E9AE9D3006AF819 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E502E641E9AE9D3006AF819 /* ImageViewer.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		26A159A6AED2B5CB4D448335 /* Pods-NASApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NASApp/Pods-NASApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E2656FD1EABD9CD00B986F2 /* APOD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
+		9E2656FF1EABE20900B986F2 /* ImageInfoViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInfoViewer.swift; sourceTree = "<group>"; };
 		9E3947B21E93168B009AABDA /* EarthImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthImage.swift; sourceTree = "<group>"; };
 		9E3947B41E931D06009AABDA /* RoverImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverImage.swift; sourceTree = "<group>"; };
 		9E502E641E9AE9D3006AF819 /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		9E76C0091E919CBF0089D2C7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E2656FF1EABE20900B986F2 /* ImageInfoViewer.swift */,
 				9E502E641E9AE9D3006AF819 /* ImageViewer.swift */,
 				9EB65C991E905D3A003E74B6 /* HomeViewController.swift */,
 				9EF75FFE1EA3F5A9006B1B38 /* EyeInTheSky */,
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E2656FE1EABD9CD00B986F2 /* APOD.swift in Sources */,
+				9E2657001EABE20900B986F2 /* ImageInfoViewer.swift in Sources */,
 				9E9680671E93E65A003D112C /* DownloadableImage.swift in Sources */,
 				9EAE6D221EA442FF0076666E /* EyeInTheSkySearchViewController.swift in Sources */,
 				9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */,

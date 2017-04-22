@@ -8,8 +8,9 @@
 
 import UIKit
 
-struct APOD: DownloadableImage {
-
+struct APOD: DownloadableImage, NASAImage {
+    
+    var type = NASAImageType.apod
     var activityIndicator: UIActivityIndicatorView?
     var imageURL: URL?
     var date: String?

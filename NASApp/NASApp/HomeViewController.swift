@@ -54,16 +54,20 @@ class HomeViewController: UIViewController {
         return button
     }()
     
-    let thirdButton: UIButton = {
+    let apodButton: UIButton = {
         
         let button = UIButton()
-        button.setTitle("TBD", for: .normal)
+        button.setTitle("Astronomy Picture of the Day", for: .normal)
+        button.setImage(UIImage(named: "26"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 5
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
         button.titleLabel?.font = button.titleLabel?.font.withSize(35)
+        button.imageEdgeInsets = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 80)
+        button.imageView?.contentMode = .center
+        button.addTarget(self, action: #selector(apodPressed), for: .touchUpInside)
         
         return button
     }()
@@ -115,7 +119,7 @@ class HomeViewController: UIViewController {
             ])
         
         // StackView Setup
-        let stackView = UIStackView(arrangedSubviews: [roverImagesButton, eyeInTheSkyeButton, thirdButton])
+        let stackView = UIStackView(arrangedSubviews: [roverImagesButton, eyeInTheSkyeButton, apodButton])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
@@ -168,6 +172,27 @@ extension HomeViewController {
         
         let eyeInTheSkySearchController = EyeInTheSkySearchViewController()
         navigationController?.pushViewController(eyeInTheSkySearchController, animated: true)
+        
+    }
+    
+    func apodPressed() {
+        
+        let nasaClient = NASAClient()
+        nasaClient.fetchAPOD { (result) in
+            
+            switch result {
+                
+            case .success(let apod):
+                
+                let imageViewer = ImageViewer(image: apod)
+                self.navigationController?.pushViewController(imageViewer, animated: true)
+                
+            case .failure(let error):
+                
+                self.presentAlert(withTitle: "Whoops!", message: "There was an error: \(error.localizedDescription)", OkResponseAction: .cancel)
+                
+            }
+        }
         
     }
     

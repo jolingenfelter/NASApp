@@ -160,7 +160,7 @@ class EyeInTheSkySearchViewController: UIViewController {
                     
                 case .success(let earthImage):
                     
-                    let imageViewer = ImageViewer(image: earthImage, imageType: .earth)
+                    let imageViewer = ImageViewer(image: earthImage)
                     self.navigationController?.pushViewController(imageViewer, animated: true)
                     
                 case .failure(let error):

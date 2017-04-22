@@ -132,6 +132,20 @@ final class NASAClient: APIClient {
     
     func fetchAPOD(_ completion: @escaping(APIResult<APOD>) -> Void) {
         
+        guard let url = NASAImages.pictureOfTheDay.createURL(withParameters: nil) else {
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        fetch(request, parse: { (json) -> APOD? in
+            
+            let imageDictionary = json
+            
+            return APOD(json: imageDictionary)
+            
+        }, completion: completion)
+        
     }
     
 }

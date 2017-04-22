@@ -89,8 +89,7 @@ class RoverImagesViewController: UIViewController {
             
             case .failure(let error):
                 
-                print(error.localizedDescription)
-                self.activityIndicator.stopAnimating()
+                self.presentAlert(withTitle: "Oh no!", message: "There was an error: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
                 
             }
             
@@ -149,7 +148,7 @@ extension RoverImagesViewController: UICollectionViewDelegate {
         
         let selectedImage = roverImages[indexPath.row]
         
-        let imageViewer = ImageViewer(image: selectedImage, imageType: .rover)
+        let imageViewer = ImageViewer(image: selectedImage)
         self.navigationController?.pushViewController(imageViewer, animated: true)
         
     }
