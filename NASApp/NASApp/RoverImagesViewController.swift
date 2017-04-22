@@ -149,7 +149,7 @@ extension RoverImagesViewController: UICollectionViewDelegate {
         
         let selectedImage = roverImages[indexPath.row]
         
-        let imageViewer = ImageViewer(image: selectedImage)
+        let imageViewer = ImageViewer(image: selectedImage, imageType: .rover)
         self.navigationController?.pushViewController(imageViewer, animated: true)
         
     }

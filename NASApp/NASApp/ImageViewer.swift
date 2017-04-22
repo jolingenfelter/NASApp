@@ -9,6 +9,14 @@
 import UIKit
 import Nuke
 
+enum NASAImageType {
+    
+    case earth
+    case rover
+    case pictureOfTheDay
+    
+}
+
 class ImageViewer: UIViewController {
     
     var image: DownloadableImage
@@ -17,7 +25,7 @@ class ImageViewer: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     var saveOrShareButton: UIBarButtonItem?
     
-    init(image: DownloadableImage) {
+    init(image: DownloadableImage, imageType: NASAImageType) {
         self.image = image
         super.init(nibName: nil, bundle: nil)
     }
