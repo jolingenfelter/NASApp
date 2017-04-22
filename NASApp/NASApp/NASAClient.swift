@@ -14,6 +14,7 @@ enum NASAImages: Endpoint {
     
     case rover
     case earth
+    case pictureOfTheDay
     
     fileprivate var apiKey: String {
         
@@ -45,6 +46,10 @@ enum NASAImages: Endpoint {
             }
             
             url = URL(string: baseURLString + "planetary/earth/imagery?lat=\(latitude)&lon=\(longitude)&api_key=\(apiKey)")
+            
+        case .pictureOfTheDay:
+            
+            url = URL(string: baseURLString + "/planetary/apod?api_key=\(apiKey)")
         
         }
         
@@ -120,6 +125,12 @@ final class NASAClient: APIClient {
         }
         
        }, completion: completion)
+        
+    }
+    
+    // Fetch Astronomy Image of the Day
+    
+    func fetchAPOD(_ completion: @escaping(APIResult<APOD>) -> Void) {
         
     }
     
