@@ -27,6 +27,7 @@ class EyeInTheSkySearchViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     let searchBar: UISearchBar
     var searchItems: [MKLocalSearchCompletion] = []
+    var selectedSearchCompletion: MKLocalSearchCompletion?
     var mapView: JLMapView
     var searchedLocation: CLLocation?
     
@@ -129,6 +130,10 @@ class EyeInTheSkySearchViewController: UIViewController {
             
         } else {
             
+            guard let searchCompletion = selectedSearchCompletion else {
+                return
+            }
+            
             let nasaClient = NASAClient()
             nasaClient.fetchEarthImage(forLocation: searchedLocation!, completion: { (result) in
                 
@@ -137,6 +142,7 @@ class EyeInTheSkySearchViewController: UIViewController {
                 case .success(let earthImage):
                     
                     let imageViewer = ImageViewer(image: earthImage)
+                    imageViewer.title = searchCompletion.title
                     self.navigationController?.pushViewController(imageViewer, animated: true)
                     
                 case .failure(let error):
@@ -164,9 +170,10 @@ extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataS
         tableView.isHidden = true
         searchBar.resignFirstResponder()
         
-        let location = searchItems[indexPath.row]
+        let searchCompletion = searchItems[indexPath.row]
+        selectedSearchCompletion = searchCompletion
         
-        mapView.mapViewSearchAndZoomInOn(searchCompletion: location) { (location) in
+        mapView.mapViewSearchAndZoomInOn(searchCompletion: searchCompletion) { (location) in
             self.searchedLocation = location
         }
         
@@ -226,11 +233,13 @@ extension EyeInTheSkySearchViewController: UISearchResultsUpdating, UISearchBarD
             
             searchBar.text = searchItems.first?.title
             
-            guard let location = searchItems.first else {
+            guard let searchCompletion = searchItems.first else {
                 return
             }
+            
+            selectedSearchCompletion = searchCompletion
 
-            mapView.mapViewSearchAndZoomInOn(searchCompletion: location) { (location) in
+            mapView.mapViewSearchAndZoomInOn(searchCompletion: searchCompletion) { (location) in
                 self.searchedLocation = location
             }
             
