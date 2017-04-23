@@ -103,6 +103,8 @@ class ImageViewer: UIViewController {
         case .rover:
             
             navigationItem.rightBarButtonItem = saveOrShareButton
+            let roverImage = image as! RoverImage
+            self.title = roverImage.earthDate
             
         case .apod:
             
