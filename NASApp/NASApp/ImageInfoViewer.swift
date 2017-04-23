@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class ImageInfoViewer: UIViewController {
     
@@ -18,6 +19,7 @@ class ImageInfoViewer: UIViewController {
         let textView = UITextView()
         textView.text = self.apod.explanation
         textView.isScrollEnabled = true
+        textView.isEditable = false
         textView.backgroundColor = .clear
         textView.font = textView.font?.withSize(24)
         textView.textColor = .white
@@ -37,7 +39,7 @@ class ImageInfoViewer: UIViewController {
     init(image: APOD) {
         
         self.apod = image
-        
+    
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -54,7 +56,7 @@ class ImageInfoViewer: UIViewController {
     
     override func viewDidLayoutSubviews() {
         
-        // ImageView
+        // BackgroundImageView
         
         view.addSubview(backgroundImageView)
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,14 +68,30 @@ class ImageInfoViewer: UIViewController {
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
         
+        
+        // APODImageView
+        
+        view.addSubview(apodImageView)
+        apodImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            apodImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            apodImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            apodImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            apodImageView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 40)
+            ])
+        
+        
+        // TextField
+        
         view.addSubview(textView)
         textView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            textView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            textView.topAnchor.constraint(equalTo: apodImageView.bottomAnchor, constant: 40),
             textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            textView.heightAnchor.constraint(equalToConstant: 400)
+            textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
             ])
         
     }
@@ -85,7 +103,17 @@ class ImageInfoViewer: UIViewController {
         
         backgroundImageView.image = UIImage(named: "ipad_background_port_x2")
         
+        guard let apodURL = apod.imageURL else {
+            return
+        }
+        
+        Nuke.loadImage(with: apodURL, into: apodImageView)
+        
         self.title = apod.date
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(apodImageTapped))
+        view.addGestureRecognizer(tapGesture)
         
     }
 
@@ -94,4 +122,18 @@ class ImageInfoViewer: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+
+// MARK: - Gestures
+
+extension ImageInfoViewer {
+    
+    func apodImageTapped() {
+        
+        let imageViewer = ImageViewer(image: apod)
+        navigationController?.pushViewController(imageViewer, animated: true)
+        
+    }
+    
 }

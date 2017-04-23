@@ -94,25 +94,21 @@ class ImageViewer: UIViewController {
         let saveOrShareButtonImage = imageWithName(image: UIImage(named: "15")!, scaledToSize: CGSize(width: 17, height: 30))
         saveOrShareButton = UIBarButtonItem(image: saveOrShareButtonImage, style: .plain, target: self, action: #selector(saveOrShareImage))
         
+        navigationItem.rightBarButtonItem = saveOrShareButton
+        
         switch nasaImage.type {
             
-        case .earth:
-            
-            navigationItem.rightBarButtonItem = saveOrShareButton
-            
         case .rover:
-            
-            navigationItem.rightBarButtonItem = saveOrShareButton
+    
             let roverImage = image as! RoverImage
             self.title = roverImage.earthDate
             
         case .apod:
             
-            let infoButton = UIBarButtonItem(title: "info", style: .plain, target: self, action: #selector(infoPressed))
-            navigationItem.rightBarButtonItems = [infoButton, saveOrShareButton!]
-            
             let apod = image as! APOD
             self.title = apod.date
+        
+        default: break
             
         }
         

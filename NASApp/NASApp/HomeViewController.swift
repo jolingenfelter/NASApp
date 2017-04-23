@@ -184,8 +184,8 @@ extension HomeViewController {
                 
             case .success(let apod):
                 
-                let imageViewer = ImageViewer(image: apod)
-                self.navigationController?.pushViewController(imageViewer, animated: true)
+                let imageInfoViewer = ImageInfoViewer(image: apod)
+                self.navigationController?.pushViewController(imageInfoViewer, animated: true)
                 
             case .failure(let error):
                 
