@@ -121,6 +121,10 @@ class ImageViewer: UIViewController {
     
     func infoPressed() {
         
+        let apod = image as! APOD
+        let imageInfoViewer = ImageInfoViewer(image: apod)
+        navigationController?.pushViewController(imageInfoViewer, animated: true)
+        
     }
     
     func saveOrShareImage() {
