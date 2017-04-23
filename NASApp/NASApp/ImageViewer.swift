@@ -94,21 +94,27 @@ class ImageViewer: UIViewController {
         let saveOrShareButtonImage = imageWithName(image: UIImage(named: "15")!, scaledToSize: CGSize(width: 17, height: 30))
         saveOrShareButton = UIBarButtonItem(image: saveOrShareButtonImage, style: .plain, target: self, action: #selector(saveOrShareImage))
         
-        navigationItem.rightBarButtonItem = saveOrShareButton
-        
         switch nasaImage.type {
             
+        case .earth :
+            
+            navigationItem.rightBarButtonItem = saveOrShareButton
+            
         case .rover:
+            
+            let createPostCardButton = UIBarButtonItem(title: "Create Postcard", style: .plain, target: self, action: #selector(createPostcardPressed))
+            
+            navigationItem.rightBarButtonItems = [createPostCardButton, saveOrShareButton!]
     
             let roverImage = image as! RoverImage
             self.title = roverImage.earthDate
             
         case .apod:
             
+            navigationItem.rightBarButtonItem = saveOrShareButton
+            
             let apod = image as! APOD
             self.title = apod.date
-        
-        default: break
             
         }
         
@@ -120,6 +126,14 @@ class ImageViewer: UIViewController {
         let apod = image as! APOD
         let imageInfoViewer = ImageInfoViewer(image: apod)
         navigationController?.pushViewController(imageInfoViewer, animated: true)
+        
+    }
+    
+    func createPostcardPressed() {
+        
+        let roverImage = image as! RoverImage
+        let createPostCardViewController = CreatePostcardViewController(roverImage: roverImage)
+        navigationController?.pushViewController(createPostCardViewController, animated: true)
         
     }
     
