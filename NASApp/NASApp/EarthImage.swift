@@ -27,16 +27,14 @@ struct EarthImage: DownloadableImage, NASAImage {
     let type = NASAImageType.earth
     var activityIndicator: UIActivityIndicatorView?
     var imageURL: URL?
-    var date: String?
     
     init?(json: json) {
         
-        guard let urlString = json["url"] as? String, let date = json["date"] as? String else {
+        guard let urlString = json["url"] as? String else {
             return nil
         }
         
         self.imageURL = URL(string: urlString)
-        self.date = date
         
     }
     

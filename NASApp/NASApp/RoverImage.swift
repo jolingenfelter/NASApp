@@ -13,16 +13,14 @@ struct RoverImage: DownloadableImage, NASAImage {
     var type = NASAImageType.rover
     var activityIndicator: UIActivityIndicatorView?
     var imageURL: URL?
-    var date: String?
     
     init?(json: json) {
         
-        guard let imageURL = json["img_src"] as? String, let date = json["date"] as? String else {
+        guard let imageURL = json["img_src"] as? String else {
             return nil
         }
         
         self.imageURL = URL(string: imageURL)
-        self.date = date
         
     }
     

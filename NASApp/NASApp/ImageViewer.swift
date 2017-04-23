@@ -99,15 +99,11 @@ class ImageViewer: UIViewController {
         case .earth:
             
             navigationItem.rightBarButtonItem = saveOrShareButton
-            let earthImage = image as! EarthImage
-            self.title = earthImage.date
             
         case .rover:
             
             navigationItem.rightBarButtonItem = saveOrShareButton
-            let roverImage = image as! RoverImage
-            self.title = roverImage.date
-        
+            
         case .apod:
             
             let infoButton = UIBarButtonItem(title: "info", style: .plain, target: self, action: #selector(infoPressed))
