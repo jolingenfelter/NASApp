@@ -22,14 +22,24 @@ class CreatePostcardViewController: UIViewController {
         textField.textColor = .white
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1.5
+        textField.layer.cornerRadius = 5
+        
+        let indentation = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.leftViewMode = .always
+        textField.leftView = indentation
         
         return textField
     }()
     
-    lazy var previewButton: UIButton = {
+    lazy var createPostcardButton: UIButton = {
         
         let button = UIButton()
-        
+        button.setTitle("Create Postcard", for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(AppDelegate.NASABarColor, for: .normal)
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(createPostcard), for: .touchUpInside)
         
         return button
     }()
@@ -59,6 +69,7 @@ class CreatePostcardViewController: UIViewController {
         super.viewDidLoad()
         
         configureView()
+        navBarSetup()
 
     }
     
@@ -87,6 +98,30 @@ class CreatePostcardViewController: UIViewController {
             roverImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             roverImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)])
         
+        // TextField
+        
+        view.addSubview(textField)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            textField.topAnchor.constraint(equalTo: roverImageView.bottomAnchor, constant: 40),
+            textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            textField.heightAnchor.constraint(equalToConstant: 40)
+            ])
+        
+        // CreatePostcardButton
+        
+        view.addSubview(createPostcardButton)
+        createPostcardButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            createPostcardButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            createPostcardButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            createPostcardButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            createPostcardButton.heightAnchor.constraint(equalToConstant: 40)
+            ])
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,11 +144,15 @@ class CreatePostcardViewController: UIViewController {
         
     }
     
+    func createPostcard() {
+        
+    }
+    
     // MARK: - Navigation
     
     func navBarSetup() {
         
-        let sendPostCardButton = UIBarButtonItem(title: "Send Postcard", style: .plain, target: self, action: #selector(sendPostcardPressed))
+        let sendPostCardButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendPostcardPressed))
         navigationItem.rightBarButtonItem = sendPostCardButton
         
     }
