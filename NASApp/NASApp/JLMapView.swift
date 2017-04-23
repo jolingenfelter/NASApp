@@ -52,5 +52,33 @@ class JLMapView: MKMapView {
         self.add(MKCircle(center: location.coordinate, radius: 50))
         
     }
+    
+    func mapViewSearchAndZoomInOn(searchCompletion: MKLocalSearchCompletion, completion: @escaping (CLLocation) -> Void) {
+        
+        let searchRequest = MKLocalSearchRequest(completion: searchCompletion)
+        let search = MKLocalSearch(request: searchRequest)
+        search.start { (response, error) in
+            
+            DispatchQueue.main.async {
+                
+                guard let response = response, let mapItem = response.mapItems.first else {
+                    return
+                }
+                
+                let placemark = mapItem.placemark
+                
+                guard let location = placemark.location else {
+                    return
+                }
+                
+                completion(location)
+                
+                self.dropPinAndZoom(placemark: placemark)
+                
+            }
+            
+        }
+        
+    }
 
 }

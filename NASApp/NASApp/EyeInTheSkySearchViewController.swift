@@ -112,30 +112,6 @@ class EyeInTheSkySearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func mapViewSearchAndZoomInOn(location: MKLocalSearchCompletion) {
-        
-        let searchRequest = MKLocalSearchRequest(completion: location)
-        let search = MKLocalSearch(request: searchRequest)
-        search.start { (response, error) in
-            
-            DispatchQueue.main.async {
-                
-                guard let response = response, let mapItem = response.mapItems.first else {
-                    return
-                }
-                
-                let placemark = mapItem.placemark
-                
-                self.searchedLocation = placemark.location
-                
-                self.mapView.dropPinAndZoom(placemark: placemark)
-                
-            }
-            
-        }
-        
-    }
-    
     // MARK: - Navigation
     
     func navBarSetup() {
@@ -190,7 +166,9 @@ extension EyeInTheSkySearchViewController: UITableViewDelegate, UITableViewDataS
         
         let location = searchItems[indexPath.row]
         
-        mapViewSearchAndZoomInOn(location: location)
+        mapView.mapViewSearchAndZoomInOn(searchCompletion: location) { (location) in
+            self.searchedLocation = location
+        }
         
     }
     
@@ -252,7 +230,9 @@ extension EyeInTheSkySearchViewController: UISearchResultsUpdating, UISearchBarD
                 return
             }
 
-            mapViewSearchAndZoomInOn(location: location)
+            mapView.mapViewSearchAndZoomInOn(searchCompletion: location) { (location) in
+                self.searchedLocation = location
+            }
             
         }
         
