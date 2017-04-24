@@ -197,22 +197,3 @@ extension RoverImagesViewController {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

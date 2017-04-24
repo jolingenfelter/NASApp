@@ -25,12 +25,13 @@ extension UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         
-        // OKAction
+        // Cancel
         let okToRootVC = UIAlertAction(title: "Ok", style: .cancel) { (action) in
             self.navigationController?.popViewController(animated: true)
         }
         let okToCancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         
+        // Back to rootVC
         if okResponseAction == .toRootViewController {
             alert.addAction(okToRootVC)
         } else {

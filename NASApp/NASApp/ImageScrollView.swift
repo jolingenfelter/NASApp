@@ -9,6 +9,7 @@
 
 import UIKit
 
+// Code used from VillyG to prevent issues with frame of imageView on rotation
 
 class ImageScrollView: UIScrollView, UIScrollViewDelegate {
     

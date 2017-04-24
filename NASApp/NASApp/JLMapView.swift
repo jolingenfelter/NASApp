@@ -53,6 +53,7 @@ class JLMapView: MKMapView {
         
     }
     
+    // Get the location and zoom in on searched location
     func mapViewSearchAndZoomInOn(searchCompletion: MKLocalSearchCompletion, completion: @escaping (CLLocation) -> Void) {
         
         let searchRequest = MKLocalSearchRequest(completion: searchCompletion)

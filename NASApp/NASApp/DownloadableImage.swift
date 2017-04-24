@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Protocol and extension to download image from NASAImage models
+
 protocol DownloadableImage {
     
     var imageURL: URL? { get }
@@ -53,7 +55,6 @@ extension DownloadableImage {
                     completion(.failure(abnormalError))
                     
                 }
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
                 
                 return
             }

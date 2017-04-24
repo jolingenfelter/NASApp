@@ -50,7 +50,7 @@ class CreatePostcardViewController: UIViewController {
     lazy var roverImageView: UIImageView = {
         
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFit  // Use aspectFit because images vary greatly in size, and postcard text is distorted otherwise
         imageView.clipsToBounds = true
         
         return imageView
@@ -199,15 +199,19 @@ extension CreatePostcardViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        // Limit characters in postcard text
         let maxLength = 50
         guard let text = textField.text else { return true }
         let newLength = text.characters.count + string.characters.count - range.length
-        return newLength <= maxLength
         
+        return newLength <= maxLength
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Create postcard if user presses enter
         createPostcard()
+        
         return true
     }
     
