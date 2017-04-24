@@ -12,7 +12,9 @@ import Nuke
 class CreatePostcardViewController: UIViewController {
     
     let roverImage: RoverImage
+    var downloadedImage: UIImage?
     var backgroundImageView = UIImageView()
+    var postcard: UIImage?
     
     lazy var textField: UITextField = {
         
@@ -136,15 +138,49 @@ class CreatePostcardViewController: UIViewController {
         
         backgroundImageView.image = UIImage(named: "ipad_background_port_x2")
         
-        guard let imageURL = roverImage.imageURL else {
-            return
+        roverImage.downloadImage { (image) in
+            
+            guard let image = image else {
+                
+                self.presentAlert(withTitle: "Oops!", message: "There was an error downloading the image", OkResponseAction: .cancel)
+                
+                return
+            }
+            
+            self.roverImageView.image = image
+            self.downloadedImage = image
+            
         }
-        
-        Nuke.loadImage(with: imageURL, into: roverImageView)
         
     }
     
+    // MARK: - Postcard
+    
     func createPostcard() {
+        
+        textField.resignFirstResponder()
+        
+        if textField.text != "" {
+            
+            guard let downloadedImage = downloadedImage else {
+                return
+            }
+            
+            let text = textField.text! as NSString
+            let point = CGPoint(x: roverImageView.center.x, y: roverImageView.center.y)
+            
+            postcard = downloadedImage.addText(text, atPoint: point)
+            roverImageView.image = postcard
+            
+        } else {
+        
+            presentAlert(withTitle: "Oops!", message: "It looks like your postcard doesn't have a message", OkResponseAction: .cancel)
+            
+        }
+        
+    }
+    
+    func sendPostcardPressed() {
         
     }
     
@@ -154,10 +190,6 @@ class CreatePostcardViewController: UIViewController {
         
         let sendPostCardButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendPostcardPressed))
         navigationItem.rightBarButtonItem = sendPostCardButton
-        
-    }
-    
-    func sendPostcardPressed() {
         
     }
 

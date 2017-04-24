@@ -15,6 +15,7 @@
 		9E502E651E9AE9D3006AF819 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E502E641E9AE9D3006AF819 /* ImageViewer.swift */; };
 		9E76C00B1E919CCE0089D2C7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76C00A1E919CCE0089D2C7 /* APIClient.swift */; };
 		9E76C00D1E91A7B40089D2C7 /* NASAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76C00C1E91A7B40089D2C7 /* NASAClient.swift */; };
+		9E7BE2A91EAD728500F498C9 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7BE2A81EAD728500F498C9 /* UIImageExtension.swift */; };
 		9E8CD9E61E966E7200A9B54F /* RoverImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8CD9E51E966E7200A9B54F /* RoverImagesViewController.swift */; };
 		9E8CD9E91E966FB000A9B54F /* RoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8CD9E81E966FB000A9B54F /* RoverCell.swift */; };
 		9E9680671E93E65A003D112C /* DownloadableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9680661E93E65A003D112C /* DownloadableImage.swift */; };
@@ -39,6 +40,7 @@
 		9E502E641E9AE9D3006AF819 /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
 		9E76C00A1E919CCE0089D2C7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		9E76C00C1E91A7B40089D2C7 /* NASAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NASAClient.swift; sourceTree = "<group>"; };
+		9E7BE2A81EAD728500F498C9 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9E8CD9E51E966E7200A9B54F /* RoverImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverImagesViewController.swift; sourceTree = "<group>"; };
 		9E8CD9E81E966FB000A9B54F /* RoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverCell.swift; sourceTree = "<group>"; };
 		9E9680661E93E65A003D112C /* DownloadableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadableImage.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				9E9915B61E9C612A0045CFF3 /* ImageScrollView.swift */,
 				9E9680661E93E65A003D112C /* DownloadableImage.swift */,
 				9EDCCD691EA2C2E200836204 /* Utilities.swift */,
+				9E7BE2A81EAD728500F498C9 /* UIImageExtension.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				9E9680671E93E65A003D112C /* DownloadableImage.swift in Sources */,
 				9EAE6D221EA442FF0076666E /* EyeInTheSkySearchViewController.swift in Sources */,
 				9EB65C9A1E905D3A003E74B6 /* HomeViewController.swift in Sources */,
+				9E7BE2A91EAD728500F498C9 /* UIImageExtension.swift in Sources */,
 				9E502E651E9AE9D3006AF819 /* ImageViewer.swift in Sources */,
 				9EDCCD6A1EA2C2E200836204 /* Utilities.swift in Sources */,
 				9E3947B31E93168B009AABDA /* EarthImage.swift in Sources */,
