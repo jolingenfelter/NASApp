@@ -14,6 +14,7 @@ class CreatePostcardViewController: UIViewController {
     let downloadedImage: UIImage
     var backgroundImageView = UIImageView()
     var postcard: UIImage?
+    var sendPostCardButton: UIBarButtonItem?
     
     lazy var textField: UITextField = {
         
@@ -165,15 +166,28 @@ class CreatePostcardViewController: UIViewController {
     
     func sendPostcardPressed() {
         
+        guard let postcard = postcard else {
+            
+            presentAlert(withTitle: "Whoops!", message: "Create a postcard first!", OkResponseAction: .cancel)
+            
+            return
+        }
+        
+        let activityController = UIActivityViewController(activityItems: [postcard], applicationActivities: nil)
+        activityController.popoverPresentationController?.barButtonItem = sendPostCardButton
+        
+        self.present(activityController, animated: true, completion: nil)
+
+        
     }
     
     // MARK: - Navigation
     
     func navBarSetup() {
         
-        let sendPostCardButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendPostcardPressed))
+        sendPostCardButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendPostcardPressed))
         navigationItem.rightBarButtonItem = sendPostCardButton
-        
+
     }
 
 }
