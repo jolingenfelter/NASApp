@@ -25,6 +25,7 @@ class CreatePostcardViewController: UIViewController {
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1.5
         textField.layer.cornerRadius = 5
+        textField.delegate = self
         
         let indentation = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         textField.leftViewMode = .always
@@ -141,6 +142,8 @@ class CreatePostcardViewController: UIViewController {
         
         roverImageView.image = downloadedImage
         
+        textField.placeholder = "Hello earthling!"
+        
     }
     
     // MARK: - Postcard
@@ -190,4 +193,22 @@ class CreatePostcardViewController: UIViewController {
 
     }
 
+}
+
+extension CreatePostcardViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let maxLength = 50
+        guard let text = textField.text else { return true }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= maxLength
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        createPostcard()
+        return true
+    }
+    
 }
