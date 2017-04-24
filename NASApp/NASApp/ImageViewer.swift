@@ -59,13 +59,6 @@ class ImageViewer: UIViewController {
         
         navBarSetup(forNASAImage: image as! NASAImage)
         
-        // Notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(failedDownloadAlert), name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
-        
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -90,10 +83,6 @@ class ImageViewer: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func failedDownloadAlert() {
-        presentAlert(withTitle: "Oh no!", message: "This image is unavailable", OkResponseAction: .toRootViewController)
     }
     
     // NavigationBar

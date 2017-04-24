@@ -6,7 +6,7 @@
 //  Copyright © 2017 JoLingenfelter. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct RoverImage: DownloadableImage, NASAImage {
     

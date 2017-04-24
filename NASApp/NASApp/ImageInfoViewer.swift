@@ -13,6 +13,7 @@ class ImageInfoViewer: UIViewController {
     
     let backgroundImageView = UIImageView()
     let apod: APOD
+    let activityIndicator = UIActivityIndicatorView()
     
     lazy var textView: UITextView = {
         
@@ -81,6 +82,16 @@ class ImageInfoViewer: UIViewController {
             apodImageView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 40)
             ])
         
+        //  ActivityIndicator
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: apodImageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: apodImageView.centerYAnchor)
+            ])
+        
         
         // TextField
         
@@ -103,11 +114,28 @@ class ImageInfoViewer: UIViewController {
         
         backgroundImageView.image = UIImage(named: "ipad_background_port_x2")
         
-        guard let apodURL = apod.imageURL else {
-            return
-        }
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         
-        Nuke.loadImage(with: apodURL, into: apodImageView)
+        apod.downloadImage { (downloadResult) in
+            
+            switch downloadResult {
+                
+            case .success(let image):
+                
+                self.apodImageView.image = image
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                
+            case .failure(let error):
+                
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                self.presentAlert(withTitle: "Oh no!", message: "There was a problem getting the picture of the day: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
+                
+            }
+            
+        }
         
         self.title = apod.date
         
