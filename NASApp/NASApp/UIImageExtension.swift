@@ -17,8 +17,11 @@ extension UIImage {
         
         // Font Attributes
         let textColor = UIColor.white
-        let textFont = UIFont(name: "Helvetica", size: 24)!
-        let textFontAttributes = [NSFontAttributeName: textFont, NSForegroundColorAttributeName: textColor]
+        let textFont = UIFont.boldSystemFont(ofSize: 56)
+        let strokeColor = UIColor.black
+        let strokeWidth = -1.5
+        
+        let textFontAttributes = [NSFontAttributeName: textFont, NSForegroundColorAttributeName: textColor, NSStrokeColorAttributeName: strokeColor, NSStrokeWidthAttributeName: strokeWidth] as [String : Any]
         
         // Put image into a rectangle as large as the original
         draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))

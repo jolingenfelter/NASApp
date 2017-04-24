@@ -11,7 +11,7 @@ import Nuke
 
 class CreatePostcardViewController: UIViewController {
     
-    var downloadedImage: UIImage?
+    let downloadedImage: UIImage
     var backgroundImageView = UIImageView()
     var postcard: UIImage?
     
@@ -48,7 +48,7 @@ class CreatePostcardViewController: UIViewController {
     lazy var roverImageView: UIImageView = {
         
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         
         return imageView
@@ -71,6 +71,7 @@ class CreatePostcardViewController: UIViewController {
         
         configureView()
         navBarSetup()
+        
 
     }
     
@@ -149,13 +150,8 @@ class CreatePostcardViewController: UIViewController {
         
         if textField.text != "" {
             
-            guard let downloadedImage = downloadedImage else {
-                return
-            }
-            
             let text = textField.text! as NSString
-            let point = CGPoint(x: roverImageView.center.x, y: roverImageView.center.y)
-            
+            let point = CGPoint(x: 20, y: downloadedImage.size.height - 80)
             postcard = downloadedImage.addText(text, atPoint: point)
             roverImageView.image = postcard
             

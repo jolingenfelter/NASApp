@@ -34,10 +34,11 @@ class ImageViewer: UIViewController {
         view.addSubview(scrollView)
         view.addSubview(activityIndicator)
         
+        // Download image
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
         image.downloadImage { (downloadResult) in
-            
-            self.activityIndicator.isHidden = false
-            self.activityIndicator.startAnimating()
             
             switch downloadResult {
                 
@@ -119,20 +120,9 @@ class ImageViewer: UIViewController {
         
     }
     
-    func infoPressed() {
-        
-        let apod = image as! APOD
-        let imageInfoViewer = ImageInfoViewer(image: apod)
-        navigationController?.pushViewController(imageInfoViewer, animated: true)
-        
-    }
-    
     func createPostcardPressed() {
         
         guard let downloadedImage = downloadedImage else {
-            
-            self.presentAlert(withTitle: "Oops", message: "There was an error accessing the postcard maker. Check your network connection.", OkResponseAction: .cancel)
-            
             return
         }
         
@@ -144,9 +134,6 @@ class ImageViewer: UIViewController {
     func saveOrShareImage() {
         
         guard let image = downloadedImage else {
-            
-            presentAlert(withTitle: "Oops!", message: "Unable to save or share image.  Check your network connection", OkResponseAction: .cancel)
-            
             return
         }
         
