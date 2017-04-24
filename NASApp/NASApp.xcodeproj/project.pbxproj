@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E1A51D11EAEB84A003B8861 /* NASAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1A51D01EAEB84A003B8861 /* NASAppTests.swift */; };
 		9E2656FE1EABD9CD00B986F2 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2656FD1EABD9CD00B986F2 /* APOD.swift */; };
 		9E2657001EABE20900B986F2 /* ImageInfoViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2656FF1EABE20900B986F2 /* ImageInfoViewer.swift */; };
 		9E34D2181EACFBBE00135EE5 /* CreatePostcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E34D2171EACFBBE00135EE5 /* CreatePostcardViewController.swift */; };
@@ -30,8 +31,21 @@
 		D6561B979DB18B8969451926 /* Pods_NASApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51AFB7E3C54EC4AD6B99EBC /* Pods_NASApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9E1A51D31EAEB84A003B8861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EB65C8C1E905D3A003E74B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EB65C931E905D3A003E74B6;
+			remoteInfo = NASApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		26A159A6AED2B5CB4D448335 /* Pods-NASApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NASApp/Pods-NASApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9E1A51CE1EAEB84A003B8861 /* NASAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E1A51D01EAEB84A003B8861 /* NASAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAppTests.swift; sourceTree = "<group>"; };
+		9E1A51D21EAEB84A003B8861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E2656FD1EABD9CD00B986F2 /* APOD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		9E2656FF1EABE20900B986F2 /* ImageInfoViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInfoViewer.swift; sourceTree = "<group>"; };
 		9E34D2171EACFBBE00135EE5 /* CreatePostcardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostcardViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9E1A51CB1EAEB84A003B8861 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9EB65C911E905D3A003E74B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,6 +97,23 @@
 				F51AFB7E3C54EC4AD6B99EBC /* Pods_NASApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E1A51C91EAEB7D6003B8861 /* APOD */ = {
+			isa = PBXGroup;
+			children = (
+				9E2656FF1EABE20900B986F2 /* ImageInfoViewer.swift */,
+			);
+			name = APOD;
+			sourceTree = "<group>";
+		};
+		9E1A51CF1EAEB84A003B8861 /* NASAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				9E1A51D01EAEB84A003B8861 /* NASAppTests.swift */,
+				9E1A51D21EAEB84A003B8861 /* Info.plist */,
+			);
+			path = NASAppTests;
 			sourceTree = "<group>";
 		};
 		9E3947B11E931661009AABDA /* Models */ = {
@@ -109,9 +147,9 @@
 		9E76C0091E919CBF0089D2C7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9E2656FF1EABE20900B986F2 /* ImageInfoViewer.swift */,
 				9E502E641E9AE9D3006AF819 /* ImageViewer.swift */,
 				9EB65C991E905D3A003E74B6 /* HomeViewController.swift */,
+				9E1A51C91EAEB7D6003B8861 /* APOD */,
 				9EF75FFE1EA3F5A9006B1B38 /* EyeInTheSky */,
 				9E502E631E9AB875006AF819 /* Rover */,
 			);
@@ -143,6 +181,7 @@
 			children = (
 				9E8CD9E71E966F8700A9B54F /* Views */,
 				9EB65C961E905D3A003E74B6 /* NASApp */,
+				9E1A51CF1EAEB84A003B8861 /* NASAppTests */,
 				9EB65C951E905D3A003E74B6 /* Products */,
 				A48EC60D6F8A4C7AA7B2863B /* Pods */,
 				24D383FDD61CA1E40319263B /* Frameworks */,
@@ -153,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				9EB65C941E905D3A003E74B6 /* NASApp.app */,
+				9E1A51CE1EAEB84A003B8861 /* NASAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +232,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9E1A51CD1EAEB84A003B8861 /* NASAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E1A51D51EAEB84A003B8861 /* Build configuration list for PBXNativeTarget "NASAppTests" */;
+			buildPhases = (
+				9E1A51CA1EAEB84A003B8861 /* Sources */,
+				9E1A51CB1EAEB84A003B8861 /* Frameworks */,
+				9E1A51CC1EAEB84A003B8861 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E1A51D41EAEB84A003B8861 /* PBXTargetDependency */,
+			);
+			name = NASAppTests;
+			productName = NASAppTests;
+			productReference = 9E1A51CE1EAEB84A003B8861 /* NASAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9EB65C931E905D3A003E74B6 /* NASApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EB65CA61E905D3A003E74B6 /* Build configuration list for PBXNativeTarget "NASApp" */;
@@ -222,6 +280,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = JoLingenfelter;
 				TargetAttributes = {
+					9E1A51CD1EAEB84A003B8861 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 2K6RX929EU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9EB65C931E905D3A003E74B6;
+					};
 					9EB65C931E905D3A003E74B6 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 2K6RX929EU;
@@ -244,11 +308,19 @@
 			projectRoot = "";
 			targets = (
 				9EB65C931E905D3A003E74B6 /* NASApp */,
+				9E1A51CD1EAEB84A003B8861 /* NASAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9E1A51CC1EAEB84A003B8861 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9EB65C921E905D3A003E74B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,6 +381,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9E1A51CA1EAEB84A003B8861 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E1A51D11EAEB84A003B8861 /* NASAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9EB65C901E905D3A003E74B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +416,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9E1A51D41EAEB84A003B8861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EB65C931E905D3A003E74B6 /* NASApp */;
+			targetProxy = 9E1A51D31EAEB84A003B8861 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		9EB65CA01E905D3A003E74B6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -348,6 +436,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9E1A51D61EAEB84A003B8861 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2K6RX929EU;
+				INFOPLIST_FILE = NASAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jolingenfelter.NASAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NASApp.app/NASApp";
+			};
+			name = Debug;
+		};
+		9E1A51D71EAEB84A003B8861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2K6RX929EU;
+				INFOPLIST_FILE = NASAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jolingenfelter.NASAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NASApp.app/NASApp";
+			};
+			name = Release;
+		};
 		9EB65CA41E905D3A003E74B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,6 +594,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9E1A51D51EAEB84A003B8861 /* Build configuration list for PBXNativeTarget "NASAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1A51D61EAEB84A003B8861 /* Debug */,
+				9E1A51D71EAEB84A003B8861 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		9EB65C8F1E905D3A003E74B6 /* Build configuration list for PBXProject "NASApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
