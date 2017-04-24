@@ -11,7 +11,6 @@ import UIKit
 struct RoverImage: DownloadableImage, NASAImage {
     
     var type = NASAImageType.rover
-    var activityIndicator: UIActivityIndicatorView?
     var imageURL: URL?
     var earthDate: String?
     

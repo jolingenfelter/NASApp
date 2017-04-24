@@ -25,7 +25,6 @@ protocol NASAImage {
 struct EarthImage: DownloadableImage, NASAImage {
     
     let type = NASAImageType.earth
-    var activityIndicator: UIActivityIndicatorView?
     var imageURL: URL?
     
     init?(json: json) {

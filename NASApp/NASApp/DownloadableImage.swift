@@ -11,7 +11,13 @@ import UIKit
 protocol DownloadableImage {
     
     var imageURL: URL? { get }
-    var activityIndicator: UIActivityIndicatorView? { get set }
+    
+}
+
+enum ImageDownloadResult {
+    
+    case success(UIImage)
+    case failure(Error)
     
 }
 
@@ -27,18 +33,27 @@ extension DownloadableImage {
             
             completion(data, response, error)
             
-        }.resume()
+            }.resume()
+    
     }
     
-    func downloadImage(_ completion: @escaping(_ image: UIImage?) -> Void) {
-        
-        activityIndicator?.isHidden = false
-        activityIndicator?.startAnimating()
+    func downloadImage(_ completion: @escaping(_ completion: ImageDownloadResult) -> Void) {
         
         getDataFromImageURL { (data, response, error) in
-            guard let data = data, error == nil else {
+            
+            guard let data = data else {
                 
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
+                if let error = error {
+                    
+                    completion(.failure(error))
+                    
+                } else {
+                    
+                    let abnormalError = NSError(domain: ANTNetworkingErrorDomain, code: AbnormalError, userInfo: nil)
+                    completion(.failure(abnormalError))
+                    
+                }
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UnableToDownloadImage"), object: nil)
                 
                 return
             }
@@ -47,14 +62,7 @@ extension DownloadableImage {
                 
                 if let image = UIImage(data: data) {
                     
-                    completion(image)
-                    self.activityIndicator?.stopAnimating()
-                    self.activityIndicator?.isHidden = true
-                    
-                } else {
-                    
-                    self.activityIndicator?.stopAnimating()
-                    self.activityIndicator?.isHidden = true
+                    completion(.success(image))
                     
                 }
                 

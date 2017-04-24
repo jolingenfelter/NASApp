@@ -32,20 +32,29 @@ class ImageViewer: UIViewController {
         // View Setup
         view.backgroundColor = AppDelegate.NASABackgroundColor
         view.addSubview(scrollView)
-        image.activityIndicator = activityIndicator
         view.addSubview(activityIndicator)
         
-        image.downloadImage { (image) in
+        image.downloadImage { (downloadResult) in
             
-            guard let image = image else {
+            self.activityIndicator.isHidden = false
+            self.activityIndicator.startAnimating()
+            
+            switch downloadResult {
                 
-                self.presentAlert(withTitle: "Uh oh!", message: "This image cannot be downloaded at this time.  Check your network connection", OkResponseAction: .toRootViewController)
+            case .success(let image):
                 
-                return
+                self.downloadedImage = image
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                self.scrollView.displayImage(image)
+            
+            case .failure(let error):
+                
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                self.presentAlert(withTitle: "Oops", message: "There was an error loading the image: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
+                
             }
-            
-            self.downloadedImage = image
-            self.scrollView.displayImage(image)
         }
         
         navBarSetup(forNASAImage: image as! NASAImage)

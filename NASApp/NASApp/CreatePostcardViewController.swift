@@ -138,18 +138,20 @@ class CreatePostcardViewController: UIViewController {
         
         backgroundImageView.image = UIImage(named: "ipad_background_port_x2")
         
-        roverImage.downloadImage { (image) in
+        roverImage.downloadImage { (downloadResult) in
             
-            guard let image = image else {
+            switch downloadResult {
                 
-                self.presentAlert(withTitle: "Oops!", message: "There was an error downloading the image", OkResponseAction: .cancel)
+            case .success(let image):
                 
-                return
+                self.roverImageView.image = image
+                self.downloadedImage = image
+                
+            case .failure(let error):
+                
+                self.presentAlert(withTitle: "Oops!", message: "There was an error downloading the image: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
+                
             }
-            
-            self.roverImageView.image = image
-            self.downloadedImage = image
-            
         }
         
     }

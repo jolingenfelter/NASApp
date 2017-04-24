@@ -175,16 +175,23 @@ extension RoverImagesViewController {
     
     func presentActivityControllerToShare(roverImage: RoverImage, forCell cell: RoverCell) {
         
-        roverImage.downloadImage { (image) in
+        roverImage.downloadImage { (downloadResult) in
             
-            guard let image = image else {
-                return
+            switch downloadResult {
+                
+            case .success(let image):
+                
+                let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                activityController.popoverPresentationController?.sourceView = cell.saveButton
+                
+                self.present(activityController, animated: true, completion: nil)
+            
+            case .failure(let error):
+                
+                self.presentAlert(withTitle: "Oh no!", message: "There was an error downloading the image: \(error.localizedDescription)", OkResponseAction: .cancel)
+                
             }
             
-            let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-            activityController.popoverPresentationController?.sourceView = cell.saveButton
-            
-            self.present(activityController, animated: true, completion: nil)
         }
         
     }

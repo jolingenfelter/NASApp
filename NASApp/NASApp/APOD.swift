@@ -11,7 +11,6 @@ import UIKit
 struct APOD: DownloadableImage, NASAImage {
     
     var type = NASAImageType.apod
-    var activityIndicator: UIActivityIndicatorView?
     var imageURL: URL?
     var date: String?
     var explanation: String?
