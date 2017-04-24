@@ -11,7 +11,6 @@ import Nuke
 
 class CreatePostcardViewController: UIViewController {
     
-    let roverImage: RoverImage
     var downloadedImage: UIImage?
     var backgroundImageView = UIImageView()
     var postcard: UIImage?
@@ -55,9 +54,9 @@ class CreatePostcardViewController: UIViewController {
         return imageView
     }()
     
-    init(roverImage: RoverImage) {
+    init(image: UIImage) {
         
-        self.roverImage = roverImage
+        self.downloadedImage = image
         
         super.init(nibName: nil, bundle: nil)
         
@@ -138,21 +137,7 @@ class CreatePostcardViewController: UIViewController {
         
         backgroundImageView.image = UIImage(named: "ipad_background_port_x2")
         
-        roverImage.downloadImage { (downloadResult) in
-            
-            switch downloadResult {
-                
-            case .success(let image):
-                
-                self.roverImageView.image = image
-                self.downloadedImage = image
-                
-            case .failure(let error):
-                
-                self.presentAlert(withTitle: "Oops!", message: "There was an error downloading the image: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
-                
-            }
-        }
+        roverImageView.image = downloadedImage
         
     }
     

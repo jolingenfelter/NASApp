@@ -129,8 +129,14 @@ class ImageViewer: UIViewController {
     
     func createPostcardPressed() {
         
-        let roverImage = image as! RoverImage
-        let createPostCardViewController = CreatePostcardViewController(roverImage: roverImage)
+        guard let downloadedImage = downloadedImage else {
+            
+            self.presentAlert(withTitle: "Oops", message: "There was an error accessing the postcard maker. Check your network connection.", OkResponseAction: .cancel)
+            
+            return
+        }
+        
+        let createPostCardViewController = CreatePostcardViewController(image: downloadedImage)
         navigationController?.pushViewController(createPostCardViewController, animated: true)
         
     }
