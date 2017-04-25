@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Contacts
 import CoreLocation
 
 enum NASAImages: Endpoint {
