@@ -44,24 +44,26 @@ class NASAppTests: XCTestCase {
             return
         }
         
-        var earthImage: EarthImage?
+        let testExpectation = expectation(description: "Earth Image present")
         
         nasaClient.fetchEarthImage(forLocation: testLocation) { (result) in
             
             switch result {
                 
-            case .success(let image) :
-                earthImage = image
+            case .success(_) :
+                
+                testExpectation.fulfill()
                 
             case .failure(_) :
+                
                 break
                 
             }
             
         }
         
-        XCTAssertNotNil(earthImage, "EarthImage is nil")
-        
+        waitForExpectations(timeout: 8, handler: nil)
+    
     }
     
 }
