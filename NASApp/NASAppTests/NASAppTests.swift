@@ -66,4 +66,60 @@ class NASAppTests: XCTestCase {
     
     }
     
+    func testFetchRoverImages() {
+        
+        let testExpectation = expectation(description: "Rover images present")
+        
+        nasaClient.fetchRoverImages { (result) in
+            
+            switch result {
+                
+            case .success(_):
+                
+                testExpectation.fulfill()
+                
+            case .failure(_):
+                
+                break
+                
+            }
+            
+        }
+        
+        waitForExpectations(timeout: 8, handler: nil)
+        
+    }
+    
+    func testFetchApod() {
+        
+        let testExpectation = expectation(description: "APOD image present")
+        
+        nasaClient.fetchAPOD { (result) in
+            
+            switch result {
+                
+            case .success(_):
+                
+                testExpectation.fulfill()
+                
+            case .failure(_):
+                
+                break
+                
+            }
+            
+        }
+        
+        waitForExpectations(timeout: 8, handler: nil)
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
