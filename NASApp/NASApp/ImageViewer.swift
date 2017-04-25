@@ -101,7 +101,7 @@ class ImageViewer: UIViewController {
             
         case .rover:
             
-            let createPostCardButton = UIBarButtonItem(title: "Create Postcard", style: .plain, target: self, action: #selector(createPostcardPressed))
+            let createPostCardButton = UIBarButtonItem(title: "Postcard", style: .plain, target: self, action: #selector(createPostcardPressed))
             
             navigationItem.rightBarButtonItems = [createPostCardButton, saveOrShareButton!]
     

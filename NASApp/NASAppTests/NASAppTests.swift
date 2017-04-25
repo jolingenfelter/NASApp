@@ -52,10 +52,10 @@ class NASAppTests: XCTestCase {
                 
             case .success(_) :
                 
-                testExpectation.fulfill()
+                 testExpectation.fulfill()
                 
             case .failure(_) :
-                
+            
                 break
                 
             }

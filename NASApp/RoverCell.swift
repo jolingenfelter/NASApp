@@ -33,12 +33,30 @@ class RoverCell: UICollectionViewCell {
         
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            saveButton.heightAnchor.constraint(equalToConstant: 40),
-            saveButton.widthAnchor.constraint(equalToConstant: 40)
-            ])
+        switch UIDevice.current.userInterfaceIdiom {
+            
+        case .pad:
+            
+            NSLayoutConstraint.activate([
+                saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+                saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+                saveButton.heightAnchor.constraint(equalToConstant: 40),
+                saveButton.widthAnchor.constraint(equalToConstant: 40)
+                ])
+            
+        case .phone:
+            
+            NSLayoutConstraint.activate([
+                saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+                saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+                saveButton.heightAnchor.constraint(equalToConstant: 20),
+                saveButton.widthAnchor.constraint(equalToConstant: 20)
+                ])
+            
+        default:
+            break
+            
+        }
         
     }
     

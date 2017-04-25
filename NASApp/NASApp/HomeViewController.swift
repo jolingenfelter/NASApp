@@ -28,9 +28,9 @@ class HomeViewController: UIViewController {
         button.layer.borderWidth = 5
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        button.titleLabel?.font = button.titleLabel?.font.withSize(35)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(18)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
-        button.imageView?.contentMode = .center
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(roverPostCardPressed), for: .touchUpInside)
         
         return button
@@ -46,9 +46,9 @@ class HomeViewController: UIViewController {
         button.layer.borderWidth = 5
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        button.titleLabel?.font = button.titleLabel?.font.withSize(35)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(18)
         button.imageEdgeInsets = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 80)
-        button.imageView?.contentMode = .center
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(eyeInTheSkyPressed), for: .touchUpInside)
         
         return button
@@ -57,16 +57,16 @@ class HomeViewController: UIViewController {
     let apodButton: UIButton = {
         
         let button = UIButton()
-        button.setTitle("Astronomy Picture of the Day", for: .normal)
+        button.setTitle("Picture of the Day", for: .normal)
         button.setImage(UIImage(named: "26"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 5
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        button.titleLabel?.font = button.titleLabel?.font.withSize(35)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(18)
         button.imageEdgeInsets = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 80)
-        button.imageView?.contentMode = .center
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(apodPressed), for: .touchUpInside)
         
         return button

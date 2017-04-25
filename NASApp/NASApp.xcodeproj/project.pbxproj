@@ -571,7 +571,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jolingenfelter.NASApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -587,7 +587,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jolingenfelter.NASApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -601,6 +601,7 @@
 				9E1A51D71EAEB84A003B8861 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EB65C8F1E905D3A003E74B6 /* Build configuration list for PBXProject "NASApp" */ = {
 			isa = XCConfigurationList;

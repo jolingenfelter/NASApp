@@ -10,6 +10,12 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    /*
+     
+     This app must be tested on a real device to test the postcard sending feature.  It does not have any other installation specifications.
+ 
+    */
 
     var window: UIWindow?
     

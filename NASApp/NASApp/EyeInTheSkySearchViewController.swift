@@ -157,6 +157,10 @@ class EyeInTheSkySearchViewController: UIViewController {
         }
         
     }
+    
+    deinit {
+        searchController.view.removeFromSuperview()
+    }
 
 }
 

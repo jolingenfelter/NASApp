@@ -22,7 +22,7 @@ class ImageInfoViewer: UIViewController {
         textView.isScrollEnabled = true
         textView.isEditable = false
         textView.backgroundColor = .clear
-        textView.font = textView.font?.withSize(24)
+        textView.font = textView.font?.withSize(14)
         textView.textColor = .white
         
         
@@ -79,7 +79,7 @@ class ImageInfoViewer: UIViewController {
             apodImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
             apodImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             apodImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            apodImageView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 40)
+            apodImageView.bottomAnchor.constraint(equalTo: view.centerYAnchor)
             ])
         
         //  ActivityIndicator
@@ -99,9 +99,9 @@ class ImageInfoViewer: UIViewController {
         textView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: apodImageView.bottomAnchor, constant: 40),
-            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            textView.topAnchor.constraint(equalTo: apodImageView.bottomAnchor, constant: 20),
+            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
             ])
         

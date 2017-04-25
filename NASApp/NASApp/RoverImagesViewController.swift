@@ -14,9 +14,26 @@ class RoverImagesViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 250, height: 150)
-        flowLayout.minimumLineSpacing = 2
-        flowLayout.minimumInteritemSpacing = 2
+        
+        // Check device type to determine size of images in collectionView
+        switch UIDevice.current.userInterfaceIdiom {
+            
+        case .phone:
+            
+            flowLayout.itemSize = CGSize(width: 120, height: 60)
+            
+        case .pad:
+            
+            flowLayout.itemSize = CGSize(width: 250, height: 150)
+            
+        default:
+            
+            flowLayout.itemSize = CGSize(width: 120, height: 60)
+            
+        }
+
+        flowLayout.minimumLineSpacing = 1
+        flowLayout.minimumInteritemSpacing = 1
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collectionView.delegate = self
         
