@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     let roverImagesButton: UIButton = {
         
         let button = UIButton()
-        button.setTitle("Mars Rover Images", for: .normal)
+        button.setTitle("Mars Rover Gallery", for: .normal)
         button.setImage(UIImage(named: "25"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
@@ -57,7 +57,7 @@ class HomeViewController: UIViewController {
     let apodButton: UIButton = {
         
         let button = UIButton()
-        button.setTitle("Picture of the Day", for: .normal)
+        button.setTitle("Photo of the Day", for: .normal)
         button.setImage(UIImage(named: "26"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
