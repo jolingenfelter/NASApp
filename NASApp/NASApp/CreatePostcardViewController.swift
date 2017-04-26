@@ -155,7 +155,7 @@ class CreatePostcardViewController: UIViewController {
         if textField.text != "" {
             
             let text = textField.text! as NSString
-            let point = CGPoint(x: 20, y: downloadedImage.size.height - 80)
+            let point = CGPoint(x: 20, y: downloadedImage.size.height - 100)
             postcard = downloadedImage.addText(text, atPoint: point)
             roverImageView.image = postcard
             
@@ -200,7 +200,7 @@ extension CreatePostcardViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         // Limit characters in postcard text
-        let maxLength = 50
+        let maxLength = 25
         guard let text = textField.text else { return true }
         let newLength = text.characters.count + string.characters.count - range.length
         

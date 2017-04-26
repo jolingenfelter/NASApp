@@ -17,7 +17,7 @@ extension UIImage {
         
         // Font Attributes
         let textColor = UIColor.white
-        let textFont = UIFont.boldSystemFont(ofSize: 64)
+        let textFont = UIFont.boldSystemFont(ofSize: 80)
         let strokeColor = UIColor.black
         let strokeWidth = -1.5
         
