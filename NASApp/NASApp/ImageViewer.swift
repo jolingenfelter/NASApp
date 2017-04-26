@@ -35,26 +35,36 @@ class ImageViewer: UIViewController {
         view.addSubview(activityIndicator)
         
         // Download image
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
         
-        image.downloadImage { (downloadResult) in
+        if let downloadedImage = downloadedImage {
             
-            switch downloadResult {
-                
-            case .success(let image):
-                
-                self.downloadedImage = image
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
-                self.scrollView.displayImage(image)
+            DispatchQueue.main.async {
+                self.scrollView.displayImage(downloadedImage)
+            }
             
-            case .failure(let error):
+        } else {
+            
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+            
+            image.downloadImage { (downloadResult) in
                 
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
-                self.presentAlert(withTitle: "Oops", message: "There was an error loading the image: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
-                
+                switch downloadResult {
+                    
+                case .success(let image):
+                    
+                    self.downloadedImage = image
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.isHidden = true
+                    self.scrollView.displayImage(image)
+                    
+                case .failure(let error):
+                    
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.isHidden = true
+                    self.presentAlert(withTitle: "Oops", message: "There was an error loading the image: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
+                    
+                }
             }
         }
         

@@ -14,6 +14,7 @@ class ImageInfoViewer: UIViewController {
     let backgroundImageView = UIImageView()
     let apod: APOD
     let activityIndicator = UIActivityIndicatorView()
+    var downloadedImage: UIImage?
     
     lazy var textView: UITextView = {
         
@@ -124,6 +125,7 @@ class ImageInfoViewer: UIViewController {
             case .success(let image):
                 
                 self.apodImageView.image = image
+                self.downloadedImage = image
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
                 
@@ -160,6 +162,7 @@ extension ImageInfoViewer {
     func apodImageTapped() {
         
         let imageViewer = ImageViewer(image: apod)
+        imageViewer.downloadedImage = downloadedImage
         navigationController?.pushViewController(imageViewer, animated: true)
         
     }
