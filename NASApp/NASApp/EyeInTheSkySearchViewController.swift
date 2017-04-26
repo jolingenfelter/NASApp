@@ -124,37 +124,36 @@ class EyeInTheSkySearchViewController: UIViewController {
     
     func satelliteViewPressed() {
         
-        if searchedLocation == nil {
+        guard let searchedLocation = searchedLocation else {
             
-            presentAlert(withTitle: "Oops!", message: "You must select a location to see the satellite image", OkResponseAction: .cancel)
+            presentAlert(withTitle: "Oops!", message: "You must select a location to see the satellite image.", OkResponseAction: .cancel)
             
-        } else {
+            return
+        }
+        
+        guard let searchCompletion = selectedSearchCompletion else {
+            return
+        }
+        
+        let nasaClient = NASAClient()
+        nasaClient.fetchEarthImage(forLocation: searchedLocation, completion: { (result) in
             
-            guard let searchCompletion = selectedSearchCompletion else {
-                return
+            switch result {
+                
+            case .success(let earthImage):
+                
+                let imageViewer = ImageViewer(image: earthImage)
+                imageViewer.title = searchCompletion.title
+                self.navigationController?.pushViewController(imageViewer, animated: true)
+                
+            case .failure(let error):
+                
+                self.presentAlert(withTitle: "Oops", message: "Something went wrong: \(error.localizedDescription)", OkResponseAction: .cancel)
+                
             }
             
-            let nasaClient = NASAClient()
-            nasaClient.fetchEarthImage(forLocation: searchedLocation!, completion: { (result) in
-                
-                switch result {
-                    
-                case .success(let earthImage):
-                    
-                    let imageViewer = ImageViewer(image: earthImage)
-                    imageViewer.title = searchCompletion.title
-                    self.navigationController?.pushViewController(imageViewer, animated: true)
-                    
-                case .failure(let error):
-                    
-                    self.presentAlert(withTitle: "Oops", message: "Something went wrong: \(error.localizedDescription)", OkResponseAction: .cancel)
-                    
-                }
-                
-            })
+        })
         
-            
-        }
         
     }
     
