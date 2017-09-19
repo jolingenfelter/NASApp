@@ -13,7 +13,6 @@ import CoreLocation
 class JLMapView: MKMapView {
     
     var searchCompleter: MKLocalSearchCompleter?
-    let geocoder = CLGeocoder()
     
     init(searchCompleter: MKLocalSearchCompleter?) {
         

@@ -163,6 +163,7 @@
 				9EDA4A3C1EA6F72A00DA0BB0 /* JLMapView.swift */,
 			);
 			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9E9680651E93E637003D112C /* Helpers */ = {
@@ -179,7 +180,6 @@
 		9EB65C8B1E905D3A003E74B6 = {
 			isa = PBXGroup;
 			children = (
-				9E8CD9E71E966F8700A9B54F /* Views */,
 				9EB65C961E905D3A003E74B6 /* NASApp */,
 				9E1A51CF1EAEB84A003B8861 /* NASAppTests */,
 				9EB65C951E905D3A003E74B6 /* Products */,
@@ -200,6 +200,7 @@
 		9EB65C961E905D3A003E74B6 /* NASApp */ = {
 			isa = PBXGroup;
 			children = (
+				9E8CD9E71E966F8700A9B54F /* Views */,
 				9EB65C971E905D3A003E74B6 /* AppDelegate.swift */,
 				9E76C0091E919CBF0089D2C7 /* Controllers */,
 				9E76C0081E919CB50089D2C7 /* Clients */,
