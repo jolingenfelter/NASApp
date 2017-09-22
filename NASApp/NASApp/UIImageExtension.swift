@@ -21,7 +21,7 @@ extension UIImage {
         let strokeColor = UIColor.black
         let strokeWidth = -1.5
         
-        let textFontAttributes = [NSAttributedStringKey.font.rawValue: textFont, NSAttributedStringKey.foregroundColor: textColor, NSAttributedStringKey.strokeColor: strokeColor, NSAttributedStringKey.strokeWidth: strokeWidth] as! [NSAttributedStringKey: Any]
+        let textFontAttributes = [NSAttributedStringKey.font: textFont, NSAttributedStringKey.foregroundColor: textColor, NSAttributedStringKey.strokeColor: strokeColor, NSAttributedStringKey.strokeWidth: strokeWidth] as [NSAttributedStringKey : Any] 
         
         // Put image into a rectangle as large as the original
         draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
