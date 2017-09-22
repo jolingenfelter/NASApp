@@ -159,7 +159,7 @@ class ImageInfoViewer: UIViewController {
 
 extension ImageInfoViewer {
     
-    func apodImageTapped() {
+    @objc func apodImageTapped() {
         
         let imageViewer = ImageViewer(image: apod)
         imageViewer.downloadedImage = downloadedImage

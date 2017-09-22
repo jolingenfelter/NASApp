@@ -148,7 +148,7 @@ class CreatePostcardViewController: UIViewController {
     
     // MARK: - Postcard
     
-    func createPostcard() {
+    @objc func createPostcard() {
         
         textField.resignFirstResponder()
         
@@ -167,7 +167,7 @@ class CreatePostcardViewController: UIViewController {
         
     }
     
-    func sendPostcardPressed() {
+    @objc func sendPostcardPressed() {
         
         guard let postcard = postcard else {
             

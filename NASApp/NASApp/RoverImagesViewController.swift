@@ -175,7 +175,7 @@ extension RoverImagesViewController: UICollectionViewDelegate {
 
 extension RoverImagesViewController {
     
-    func saveOrShareImage(sender: UIButton) {
+    @objc func saveOrShareImage(sender: UIButton) {
         
         let point = sender.convert(CGPoint.zero, to: collectionView)
         

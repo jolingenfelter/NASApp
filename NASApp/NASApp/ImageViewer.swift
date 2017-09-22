@@ -130,7 +130,7 @@ class ImageViewer: UIViewController {
         
     }
     
-    func createPostcardPressed() {
+    @objc func createPostcardPressed() {
         
         guard let downloadedImage = downloadedImage else {
             return
@@ -141,7 +141,7 @@ class ImageViewer: UIViewController {
         
     }
     
-    func saveOrShareImage() {
+    @objc func saveOrShareImage() {
         
         guard let image = downloadedImage else {
             return
