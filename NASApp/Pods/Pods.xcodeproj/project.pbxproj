@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BA3DB460C1DE2E7A2CD6D6CA04E372D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		58048CC60249BA2945881799E35B46B9 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96139230A3FCE70A78571A5465C51628 /* DataDecoder.swift */; };
-		5F77CC8E66956807A504EE13378AC9B5 /* Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF74183DD3C6E4033B75AF7C3E18BA /* Nuke.swift */; };
-		684C72432F27F3C9C2294A0496EBC4A4 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C971582771F8C27CD1D7FE08697D844 /* Scheduler.swift */; };
-		6F4F22416CFACB3F826202B4A451A294 /* Preheater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F747368B31A4FEC4808E08FEDCC9E7 /* Preheater.swift */; };
-		701A004DFF67F8FF0284A327E416063E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5757F018D1A3F768BFD3D800BCFE356A /* Request.swift */; };
-		9129C5CE184312A0E0B28D879C76256E /* Pods-NASApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E495BA5E2B4003F00630078D7F01EC /* Pods-NASApp-dummy.m */; };
-		AD62C226290A0FEE0769C6477133F336 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E7DD08DEA850600B659BE6374A8CD2 /* Processor.swift */; };
-		AF9B6D1D277C78EB7A34751EA3A094D3 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF768B34CC57DCD87FA35FD71C99EC /* Loader.swift */; };
-		B00CABE647F12C4A629721A688B16F1C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11010F6CD808312AB2378E21C8BF48C /* Cache.swift */; };
-		BA72FD84A65ADDBFD777E019703D2D10 /* CancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908DA4802216013619545A2DFD99154 /* CancellationToken.swift */; };
-		BE2C308BB6A02B445CBDDB3A332B6B8F /* Nuke-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C92001B59AAAD27EFD007EAEBFB795A /* Nuke-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BFA6CE17B14D44F7B44D795B2E637389 /* Pods-NASApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF555769FCDAE8FD852D58D67F20E52E /* Pods-NASApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0AC3D816FE8BD312BCCF12C18310C10 /* Deduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BC8D440C815A6B2888B545FF281A14 /* Deduplicator.swift */; };
-		CF735FB30A0939354ADE6A3A2C80ED9A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE5AEC6C8A588C8F218260935B0C6B /* Manager.swift */; };
-		D91D9F54E30A315A6299F5E85FF08EE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		E67CCF08431D84DCB2068A0F6CC915F7 /* Nuke-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B807122D21CAD6F4834E75C666E7C2B5 /* Nuke-dummy.m */; };
-		F9BC2A2D6B853D8E4477EE34DC406E31 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC067D66A306C017CB0820C12735A23 /* DataLoader.swift */; };
+		08DD2EE862771D81F72AEED3830037F5 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11010F6CD808312AB2378E21C8BF48C /* Cache.swift */; };
+		09A777C1F0DBD656CC239282B05C2AC3 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96139230A3FCE70A78571A5465C51628 /* DataDecoder.swift */; };
+		30F77B29DA04BD9CC5BE9C01580C8575 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C971582771F8C27CD1D7FE08697D844 /* Scheduler.swift */; };
+		35F0F9F26B6012996AACCED7AAC0EB5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		3FDAEE8EDEFB43E298CD1D18E1D6136E /* Pods-NASApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF555769FCDAE8FD852D58D67F20E52E /* Pods-NASApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		407A0926539AA3F046587605107453C4 /* Deduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BC8D440C815A6B2888B545FF281A14 /* Deduplicator.swift */; };
+		483BA0DD9C507911686CF3F181B4F605 /* Preheater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F747368B31A4FEC4808E08FEDCC9E7 /* Preheater.swift */; };
+		5ADBFB7B8E16FF5DC7CD8835FBCD7144 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5757F018D1A3F768BFD3D800BCFE356A /* Request.swift */; };
+		6667A6E82B4AD4DEEAF9702FC61BD489 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E7DD08DEA850600B659BE6374A8CD2 /* Processor.swift */; };
+		6C4FF19CCA355061FE5BB62159D85672 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC067D66A306C017CB0820C12735A23 /* DataLoader.swift */; };
+		7E8F914D4CA9F638231996CCACC953C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		81398D284C811060FCE52E52F778C88B /* Nuke-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B807122D21CAD6F4834E75C666E7C2B5 /* Nuke-dummy.m */; };
+		8341727D7362AF57EED4B4722C4AE266 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF768B34CC57DCD87FA35FD71C99EC /* Loader.swift */; };
+		9DB93BA64A25F292A99F91F1AE2174FC /* Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF74183DD3C6E4033B75AF7C3E18BA /* Nuke.swift */; };
+		C6DFA4FDE4DD5BEC8B2E16B488FEA51B /* CancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908DA4802216013619545A2DFD99154 /* CancellationToken.swift */; };
+		E3F1538E71AAFE06F3FF5A1F82C7E481 /* Nuke-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C92001B59AAAD27EFD007EAEBFB795A /* Nuke-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F01E591A91E3EC9635177A3E2433ACC5 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE5AEC6C8A588C8F218260935B0C6B /* Manager.swift */; };
+		F4675C4728D9B05FCC948C3302300591 /* Pods-NASApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E495BA5E2B4003F00630078D7F01EC /* Pods-NASApp-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		69E7B586AA8672176F94777D9F780BB3 /* PBXContainerItemProxy */ = {
+		E6951B98196C221DEF7F2A0549007F54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 53B43C580642C62983F393125842F8D0;
+			remoteGlobalIDString = 1FB3581F4855FB816F0C4899ED1A6026;
 			remoteInfo = Nuke;
 		};
 /* End PBXContainerItemProxy section */
@@ -49,6 +49,7 @@
 		58F747368B31A4FEC4808E08FEDCC9E7 /* Preheater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Preheater.swift; path = Sources/Preheater.swift; sourceTree = "<group>"; };
 		5E5598656B3C6A4FA5453B7E41695A4C /* Pods-NASApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NASApp.modulemap"; sourceTree = "<group>"; };
 		64BF74183DD3C6E4033B75AF7C3E18BA /* Nuke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Nuke.swift; path = Sources/Nuke.swift; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		78D363AC6E71987A01C755655476590A /* Nuke.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nuke.xcconfig; sourceTree = "<group>"; };
 		7BEB6619A07417E354686305E3A092B8 /* Nuke-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nuke-prefix.pch"; sourceTree = "<group>"; };
 		867B3D75D467E436CC10127301A5EA1D /* Pods-NASApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NASApp-resources.sh"; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		C7014E4047142DB0A4324C4C5C17380E /* Pods-NASApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NASApp-frameworks.sh"; sourceTree = "<group>"; };
 		C8CE5AEC6C8A588C8F218260935B0C6B /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Sources/Manager.swift; sourceTree = "<group>"; };
 		CAF0D78DDD00603EE7DD41377CCEBB1C /* Pods_NASApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CF555769FCDAE8FD852D58D67F20E52E /* Pods-NASApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NASApp-umbrella.h"; sourceTree = "<group>"; };
 		D908DA4802216013619545A2DFD99154 /* CancellationToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CancellationToken.swift; path = Sources/CancellationToken.swift; sourceTree = "<group>"; };
 		E11010F6CD808312AB2378E21C8BF48C /* Cache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = Sources/Cache.swift; sourceTree = "<group>"; };
@@ -73,19 +73,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8FD29934B72EC6C87401C69077A1176F /* Frameworks */ = {
+		0DF7C270ECEA34B7AD8A63EF72774E49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D91D9F54E30A315A6299F5E85FF08EE9 /* Foundation.framework in Frameworks */,
+				7E8F914D4CA9F638231996CCACC953C4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A29504A6C30F5B30D90B9AB548A7F3C4 /* Frameworks */ = {
+		3A09B9FB8DAE6D47402D3FDA901B0BBF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BA3DB460C1DE2E7A2CD6D6CA04E372D /* Foundation.framework in Frameworks */,
+				35F0F9F26B6012996AACCED7AAC0EB5B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,14 +116,6 @@
 				1F9FEB9EE59679CE66E2F671F930FAA3 /* Pods-NASApp */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -183,9 +175,17 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		DA6C9FA044C09C57B63DF98621732B70 /* Pods */ = {
@@ -199,50 +199,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		10064119AFA55423AC4CFCE7B775014B /* Headers */ = {
+		3FC892C0CA720D7EAF8B786D75295C42 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE2C308BB6A02B445CBDDB3A332B6B8F /* Nuke-umbrella.h in Headers */,
+				3FDAEE8EDEFB43E298CD1D18E1D6136E /* Pods-NASApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		71E01323A417EB99554B38E0EB997D9F /* Headers */ = {
+		AA7E6E233F607A6AF83889D0EFA7A78D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFA6CE17B14D44F7B44D795B2E637389 /* Pods-NASApp-umbrella.h in Headers */,
+				E3F1538E71AAFE06F3FF5A1F82C7E481 /* Nuke-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		209E87D7784702578DC4F653F69C58BB /* Pods-NASApp */ = {
+		080DF9CD203A463892BCD741C4E1ABE0 /* Pods-NASApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85AF1375135B50251BD47749507E331D /* Build configuration list for PBXNativeTarget "Pods-NASApp" */;
+			buildConfigurationList = CFE7D4917BC11D1B65E42C0661A32846 /* Build configuration list for PBXNativeTarget "Pods-NASApp" */;
 			buildPhases = (
-				525CD1B30B84013356D3904C5292CE88 /* Sources */,
-				A29504A6C30F5B30D90B9AB548A7F3C4 /* Frameworks */,
-				71E01323A417EB99554B38E0EB997D9F /* Headers */,
+				17E740E01129201C620DB9AEE5177E84 /* Sources */,
+				3A09B9FB8DAE6D47402D3FDA901B0BBF /* Frameworks */,
+				3FC892C0CA720D7EAF8B786D75295C42 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3BC3F398F63743003DEADC730BA24541 /* PBXTargetDependency */,
+				C896FCBA8231A2758973FBC00F876B4E /* PBXTargetDependency */,
 			);
 			name = "Pods-NASApp";
 			productName = "Pods-NASApp";
 			productReference = CAF0D78DDD00603EE7DD41377CCEBB1C /* Pods_NASApp.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		53B43C580642C62983F393125842F8D0 /* Nuke */ = {
+		1FB3581F4855FB816F0C4899ED1A6026 /* Nuke */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B8E8F53947FED9D94A09CC7FDC9E3A6 /* Build configuration list for PBXNativeTarget "Nuke" */;
+			buildConfigurationList = 2A445007023C82BE51996B505561EC8F /* Build configuration list for PBXNativeTarget "Nuke" */;
 			buildPhases = (
-				DA23986A16E0CCE7B56A9E29B1E201A7 /* Sources */,
-				8FD29934B72EC6C87401C69077A1176F /* Frameworks */,
-				10064119AFA55423AC4CFCE7B775014B /* Headers */,
+				102C79780792590C1C8F876967F520E1 /* Sources */,
+				0DF7C270ECEA34B7AD8A63EF72774E49 /* Frameworks */,
+				AA7E6E233F607A6AF83889D0EFA7A78D /* Headers */,
 			);
 			buildRules = (
 			);
@@ -259,14 +259,14 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
-					209E87D7784702578DC4F653F69C58BB = {
-						LastSwiftMigration = 0830;
+					080DF9CD203A463892BCD741C4E1ABE0 = {
+						LastSwiftMigration = 0900;
 					};
-					53B43C580642C62983F393125842F8D0 = {
-						LastSwiftMigration = 0830;
+					1FB3581F4855FB816F0C4899ED1A6026 = {
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -282,122 +282,61 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53B43C580642C62983F393125842F8D0 /* Nuke */,
-				209E87D7784702578DC4F653F69C58BB /* Pods-NASApp */,
+				1FB3581F4855FB816F0C4899ED1A6026 /* Nuke */,
+				080DF9CD203A463892BCD741C4E1ABE0 /* Pods-NASApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		525CD1B30B84013356D3904C5292CE88 /* Sources */ = {
+		102C79780792590C1C8F876967F520E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9129C5CE184312A0E0B28D879C76256E /* Pods-NASApp-dummy.m in Sources */,
+				08DD2EE862771D81F72AEED3830037F5 /* Cache.swift in Sources */,
+				C6DFA4FDE4DD5BEC8B2E16B488FEA51B /* CancellationToken.swift in Sources */,
+				09A777C1F0DBD656CC239282B05C2AC3 /* DataDecoder.swift in Sources */,
+				6C4FF19CCA355061FE5BB62159D85672 /* DataLoader.swift in Sources */,
+				407A0926539AA3F046587605107453C4 /* Deduplicator.swift in Sources */,
+				8341727D7362AF57EED4B4722C4AE266 /* Loader.swift in Sources */,
+				F01E591A91E3EC9635177A3E2433ACC5 /* Manager.swift in Sources */,
+				81398D284C811060FCE52E52F778C88B /* Nuke-dummy.m in Sources */,
+				9DB93BA64A25F292A99F91F1AE2174FC /* Nuke.swift in Sources */,
+				483BA0DD9C507911686CF3F181B4F605 /* Preheater.swift in Sources */,
+				6667A6E82B4AD4DEEAF9702FC61BD489 /* Processor.swift in Sources */,
+				5ADBFB7B8E16FF5DC7CD8835FBCD7144 /* Request.swift in Sources */,
+				30F77B29DA04BD9CC5BE9C01580C8575 /* Scheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA23986A16E0CCE7B56A9E29B1E201A7 /* Sources */ = {
+		17E740E01129201C620DB9AEE5177E84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B00CABE647F12C4A629721A688B16F1C /* Cache.swift in Sources */,
-				BA72FD84A65ADDBFD777E019703D2D10 /* CancellationToken.swift in Sources */,
-				58048CC60249BA2945881799E35B46B9 /* DataDecoder.swift in Sources */,
-				F9BC2A2D6B853D8E4477EE34DC406E31 /* DataLoader.swift in Sources */,
-				C0AC3D816FE8BD312BCCF12C18310C10 /* Deduplicator.swift in Sources */,
-				AF9B6D1D277C78EB7A34751EA3A094D3 /* Loader.swift in Sources */,
-				CF735FB30A0939354ADE6A3A2C80ED9A /* Manager.swift in Sources */,
-				E67CCF08431D84DCB2068A0F6CC915F7 /* Nuke-dummy.m in Sources */,
-				5F77CC8E66956807A504EE13378AC9B5 /* Nuke.swift in Sources */,
-				6F4F22416CFACB3F826202B4A451A294 /* Preheater.swift in Sources */,
-				AD62C226290A0FEE0769C6477133F336 /* Processor.swift in Sources */,
-				701A004DFF67F8FF0284A327E416063E /* Request.swift in Sources */,
-				684C72432F27F3C9C2294A0496EBC4A4 /* Scheduler.swift in Sources */,
+				F4675C4728D9B05FCC948C3302300591 /* Pods-NASApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3BC3F398F63743003DEADC730BA24541 /* PBXTargetDependency */ = {
+		C896FCBA8231A2758973FBC00F876B4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Nuke;
-			target = 53B43C580642C62983F393125842F8D0 /* Nuke */;
-			targetProxy = 69E7B586AA8672176F94777D9F780BB3 /* PBXContainerItemProxy */;
+			target = 1FB3581F4855FB816F0C4899ED1A6026 /* Nuke */;
+			targetProxy = E6951B98196C221DEF7F2A0549007F54 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0013026019A32CF970FBA65E5C704783 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58D9F1E332229C0B379A224F742CA731 /* Pods-NASApp.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-NASApp/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NASApp/Pods-NASApp.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NASApp;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		18F4979A7A65CE0F107D4AEF5331276E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78D363AC6E71987A01C755655476590A /* Nuke.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Nuke/Nuke-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Nuke/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Nuke/Nuke.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Nuke;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2A579987442007AFB03BF4A67C28174B /* Debug */ = {
+		298FBCFEAE62FA6ECDA95FDEDD2D73ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F6FA71CF44E7432F50959F56946D3725 /* Pods-NASApp.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -420,19 +359,22 @@
 				PRODUCT_NAME = Pods_NASApp;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		5184430A2EB74B2F1AD2C0FC42C7F5E0 /* Release */ = {
+		707B86CFB21B645E37109F39754D4051 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -440,12 +382,16 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -460,17 +406,130 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		73D845169C007274504228832AD8E243 /* Debug */ = {
+		74077F6461A63D51C4E1ABDBCE146EBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78D363AC6E71987A01C755655476590A /* Nuke.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Nuke/Nuke-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Nuke/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Nuke/Nuke.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Nuke;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		740C77ECBC76302F053400487FEB81C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78D363AC6E71987A01C755655476590A /* Nuke.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Nuke/Nuke-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Nuke/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Nuke/Nuke.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Nuke;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7EF4DBB3D1BD9EDD2B4E4223438BFA9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58D9F1E332229C0B379A224F742CA731 /* Pods-NASApp.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-NASApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NASApp/Pods-NASApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_NASApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EF26A3C5B6EDA309192C6025F703DE0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -478,12 +537,16 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -503,68 +566,39 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		DD2733958ED8015F557E1BB8006E0B66 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78D363AC6E71987A01C755655476590A /* Nuke.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Nuke/Nuke-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Nuke/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Nuke/Nuke.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Nuke;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A445007023C82BE51996B505561EC8F /* Build configuration list for PBXNativeTarget "Nuke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				740C77ECBC76302F053400487FEB81C8 /* Debug */,
+				74077F6461A63D51C4E1ABDBCE146EBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73D845169C007274504228832AD8E243 /* Debug */,
-				5184430A2EB74B2F1AD2C0FC42C7F5E0 /* Release */,
+				EF26A3C5B6EDA309192C6025F703DE0A /* Debug */,
+				707B86CFB21B645E37109F39754D4051 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B8E8F53947FED9D94A09CC7FDC9E3A6 /* Build configuration list for PBXNativeTarget "Nuke" */ = {
+		CFE7D4917BC11D1B65E42C0661A32846 /* Build configuration list for PBXNativeTarget "Pods-NASApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD2733958ED8015F557E1BB8006E0B66 /* Debug */,
-				18F4979A7A65CE0F107D4AEF5331276E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		85AF1375135B50251BD47749507E331D /* Build configuration list for PBXNativeTarget "Pods-NASApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2A579987442007AFB03BF4A67C28174B /* Debug */,
-				0013026019A32CF970FBA65E5C704783 /* Release */,
+				298FBCFEAE62FA6ECDA95FDEDD2D73ED /* Debug */,
+				7EF4DBB3D1BD9EDD2B4E4223438BFA9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

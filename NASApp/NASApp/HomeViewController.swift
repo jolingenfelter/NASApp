@@ -161,21 +161,21 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
     
-    func roverPostCardPressed() {
+    @objc func roverPostCardPressed() {
         
         let roverImagesViewController = RoverImagesViewController()
         navigationController?.pushViewController(roverImagesViewController, animated: true)
         
     }
     
-    func eyeInTheSkyPressed() {
+    @objc func eyeInTheSkyPressed() {
         
         let eyeInTheSkySearchController = EyeInTheSkySearchViewController()
         navigationController?.pushViewController(eyeInTheSkySearchController, animated: true)
         
     }
     
-    func apodPressed() {
+    @objc func apodPressed() {
         
         let nasaClient = NASAClient()
         nasaClient.fetchAPOD { (result) in

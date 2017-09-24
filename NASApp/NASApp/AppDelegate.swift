@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    static let NASABackgroundColor = UIColor(colorLiteralRed: 28/255, green: 22/255, blue: 54/255, alpha: 1)
-    static let NASABarColor = UIColor(colorLiteralRed: 17/255, green: 14/255, blue: 34/255, alpha: 1)
-
+    static let NASABackgroundColor = UIColor(red: 28/255, green: 22/255, blue: 54/255, alpha: 1)
+    static let NASABarColor = UIColor(red: 17/255, green: 14/255, blue: 34/255, alpha: 1)
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBarAppearance.barTintColor = AppDelegate.NASABarColor
         navBarAppearance.tintColor = .white
         navBarAppearance.isTranslucent = false
-        navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         // StatusBar
         UIApplication.shared.statusBarStyle = .lightContent

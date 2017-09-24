@@ -122,7 +122,7 @@ class EyeInTheSkySearchViewController: UIViewController {
         
     }
     
-    func satelliteViewPressed() {
+    @objc func satelliteViewPressed() {
         
         guard let searchedLocation = searchedLocation else {
             
