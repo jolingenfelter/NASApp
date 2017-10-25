@@ -136,7 +136,7 @@ class EyeInTheSkySearchViewController: UIViewController {
         }
         
         let nasaClient = NASAClient()
-        nasaClient.fetchEarthImage(forLocation: searchedLocation, completion: { (result) in
+        nasaClient.fetchEarthImage(forLocation: searchedLocation, completion: { [weak self] (result) in
             
             switch result {
                 
@@ -144,11 +144,11 @@ class EyeInTheSkySearchViewController: UIViewController {
                 
                 let imageViewer = ImageViewer(image: earthImage)
                 imageViewer.title = searchCompletion.title
-                self.navigationController?.pushViewController(imageViewer, animated: true)
+                self?.navigationController?.pushViewController(imageViewer, animated: true)
                 
             case .failure(let error):
                 
-                self.presentAlert(withTitle: "Oops", message: "Something went wrong: \(error.localizedDescription)", OkResponseAction: .cancel)
+                self?.presentAlert(withTitle: "Oops", message: "Something went wrong: \(error.localizedDescription)", OkResponseAction: .cancel)
                 
             }
             

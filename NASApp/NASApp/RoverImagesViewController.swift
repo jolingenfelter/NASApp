@@ -94,19 +94,19 @@ class RoverImagesViewController: UIViewController {
         
         activityIndicator.startAnimating()
         
-        nasaClient.fetchRoverImages { (result) in
+        nasaClient.fetchRoverImages { [weak self] (result) in
             
             switch result {
                 
             case .success(let images) :
     
-                self.roverImages = images
-                self.collectionView.reloadData()
-                self.activityIndicator.stopAnimating()
+                self?.roverImages = images
+                self?.collectionView.reloadData()
+                self?.activityIndicator.stopAnimating()
             
             case .failure(let error):
                 
-                self.presentAlert(withTitle: "Oh no!", message: "There was an error: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
+                self?.presentAlert(withTitle: "Oh no!", message: "There was an error: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
                 
             }
             

@@ -178,18 +178,18 @@ extension HomeViewController {
     @objc func apodPressed() {
         
         let nasaClient = NASAClient()
-        nasaClient.fetchAPOD { (result) in
+        nasaClient.fetchAPOD { [weak self] (result) in
             
             switch result {
                 
             case .success(let apod):
                 
                 let imageInfoViewer = ImageInfoViewer(image: apod)
-                self.navigationController?.pushViewController(imageInfoViewer, animated: true)
+                self?.navigationController?.pushViewController(imageInfoViewer, animated: true)
                 
             case .failure(let error):
                 
-                self.presentAlert(withTitle: "Whoops!", message: "There was an error: \(error.localizedDescription)", OkResponseAction: .cancel)
+                self?.presentAlert(withTitle: "Whoops!", message: "There was an error: \(error.localizedDescription)", OkResponseAction: .cancel)
                 
             }
         }

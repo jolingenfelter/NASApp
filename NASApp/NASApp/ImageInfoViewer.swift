@@ -118,22 +118,22 @@ class ImageInfoViewer: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
-        apod.downloadImage { (downloadResult) in
+        apod.downloadImage { [weak self] (downloadResult) in
             
             switch downloadResult {
                 
             case .success(let image):
                 
-                self.apodImageView.image = image
-                self.downloadedImage = image
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
+                self?.apodImageView.image = image
+                self?.downloadedImage = image
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
                 
             case .failure(let error):
                 
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
-                self.presentAlert(withTitle: "Oh no!", message: "There was a problem getting the picture of the day: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
+                self?.presentAlert(withTitle: "Oh no!", message: "There was a problem getting the picture of the day: \(error.localizedDescription)", OkResponseAction: .toRootViewController)
                 
             }
             
